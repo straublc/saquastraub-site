@@ -1,0 +1,15 @@
+.mb-3 a[aria-label="WhatsApp"]:hover i {
+  color: #25D366; 
+}
+
+.mb-3 a[aria-label="Instagram"]:hover i {
+  color: #E1306C; 
+}
+
+.mb-3 a[aria-label="E-mail"]:hover i {
+  color: #2e4ae4; 
+}
+
+footer{
+  margin-top: 6rem;
+}
