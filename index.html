@@ -1,333 +1,561 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B13CP5JBL4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-B13CP5JBL4');
     </script>
 
+    <!-- Structured Data Otimizado -->
     <script type="application/ld+json">
         {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SaquaStraub",
-        "url": "https://www.saquastraub.com.br",
-        "logo": "https://www.saquastraub.com.br/img/favicon.png",
-        "sameAs": [
-            "https://www.instagram.com/saquastraub"
-        ]
+            "@context": "https://schema.org",
+            "@type": "LodgingBusiness",
+            "name": "SaquaStraub",
+            "description": "Casa de praia premium para aluguel temporada em Saquarema RJ com piscina, churrasqueira e todas as comodidades",
+            "url": "https://www.saquastraub.com.br",
+            "logo": "https://www.saquastraub.com.br/img/logo.png",
+            "image": [
+                "https://www.saquastraub.com.br/img/banner/casa.webp",
+                "https://www.saquastraub.com.br/img/banner/piscina.webp",
+                "https://www.saquastraub.com.br/img/externa/externa01.jpg"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Avenida Ademar Avelino Barreto, 114",
+                "addressLocality": "Saquarema",
+                "addressRegion": "RJ",
+                "postalCode": "28990-000",
+                "addressCountry": "BR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -22.8963876,
+                "longitude": -42.4822001
+            },
+            "telephone": "+55-21-97601-1899",
+            "priceRange": "$$",
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Piscina",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification", 
+                    "name": "Churrasqueira",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Wi-Fi gratuito",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Ar-condicionado",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Estacionamento gratuito",
+                    "value": true
+                }
+            ],
+            "numberOfRooms": 3,
+            "maximumAttendeeCapacity": 20,
+            "sameAs": [
+                "https://www.instagram.com/saquastraub"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "25"
+            }
         }
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Lucas Straub" />
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
-    <title>SaquaStraub</title>
+    <!-- Meta Tags SEO Otimizadas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas Straub">
+    <meta name="description" content="Casa de praia premium para aluguel em Saquarema RJ. Piscina, churrasqueira, 3 suítes climatizadas, Wi-Fi. Próximo à Praia de Itaúna e centro. Reserve já!">
+    <meta name="keywords" content="casa praia saquarema, aluguel temporada saquarema, casa temporada rj, piscina churrasqueira, praia itauna, casa verde vale, aluguel casa praia, temporada saquarema, casa familia saquarema, hospedagem saquarema">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.saquastraub.com.br">
+    <meta property="og:title" content="SaquaStraub - Casa de Praia Premium em Saquarema RJ">
+    <meta property="og:description" content="Casa de praia completa com piscina, churrasqueira e 3 suítes climatizadas. Próximo à famosa Praia de Itaúna. Ideal para famílias e grupos.">
+    <meta property="og:image" content="https://www.saquastraub.com.br/img/banner/casa.webp">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="SaquaStraub">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.saquastraub.com.br">
+    <meta property="twitter:title" content="SaquaStraub - Casa de Praia Premium em Saquarema RJ">
+    <meta property="twitter:description" content="Casa de praia completa com piscina, churrasqueira e 3 suítes climatizadas. Próximo à famosa Praia de Itaúna.">
+    <meta property="twitter:image" content="https://www.saquastraub.com.br/img/banner/casa.webp">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="BR-RJ">
+    <meta name="geo.placename" content="Saquarema, Rio de Janeiro">
+    <meta name="geo.position" content="-22.8963876,-42.4822001">
+    <meta name="ICBM" content="-22.8963876,-42.4822001">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.saquastraub.com.br">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="pt-br" href="https://www.saquastraub.com.br">
+    <link rel="alternate" hreflang="en" href="https://www.saquastraub.com.br?lang=en">
+    <link rel="alternate" hreflang="es" href="https://www.saquastraub.com.br?lang=es">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    
+    <!-- Title Otimizado -->
+    <title>Casa de Praia Saquarema RJ | Aluguel Temporada com Piscina | SaquaStraub</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-light">
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link" data-i18n="skipToContent">Pular para o conteúdo</a>
 
-    <!-- Navbar -->
+    <!-- Modern Header -->
+    <header>
+        <nav class="navbar-modern" id="navbar">
+            <div class="container-custom">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <!-- Logo -->
+                    <a href="#top" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Logo SaquaStraub" class="navbar-logo">
+                    </a>
 
-    <header id="top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" aria-label="Menu principal">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
-                    <img src="../img/logo.png" alt="Logo" class="d-block d-sm-none" height="120" />
-                    <img src="../img/logo.png" alt="Logo" class="d-none d-sm-block" height="125" />
-                </a>
+                    <!-- Desktop Navigation -->
+                    <div class="nav-desktop">
+                        <a href="./pages/instalacoes.html" class="nav-link-modern" data-i18n="instalacoes">Instalações</a>
+                        <a href="#localizacao" class="nav-link-modern" data-i18n="localizacao">Localização</a>
+                        <a href="#reserva" class="nav-link-modern" data-i18n="reservarLink">Reservar</a>
+                        
+                        <!-- Language Selector -->
+                        <div id="language-app" class="language-selector">
+                            <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="24" height="18" class="rounded">
+                            <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
+                                <option value="pt" data-i18n="lang.pt">Português</option>
+                                <option value="en" data-i18n="lang.en">English</option>
+                                <option value="es" data-i18n="lang.es">Español</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="d-none d-lg-block position-absolute start-50 translate-middle-x">
-                    <div id="language-app" class="d-flex align-items-center gap-2">
-                        <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="40" height="30"
-                            class="rounded-circle" />
-                        <select v-model="currentLang" @change="changeLanguage"
-                            class="form-select form-select-sm custom-select-modern" aria-label="Seleção de idioma">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Offcanvas Menu -->
+        <div class="offcanvas offcanvas-end offcanvas-modern" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header offcanvas-header-modern">
+                <h5 class="offcanvas-title offcanvas-title-modern" id="mobileMenuLabel" data-i18n="menu">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body offcanvas-body-modern">
+                <nav>
+                    <a href="./pages/instalacoes.html" class="mobile-nav-link" data-i18n="instalacoes">
+                        <i class="bi bi-images"></i>
+                        Instalações
+                    </a>
+                    <a href="#localizacao" class="mobile-nav-link" data-i18n="localizacao">
+                        <i class="bi bi-geo-alt"></i>
+                        Localização
+                    </a>
+                    <a href="#reserva" class="mobile-nav-link" data-i18n="reservarLink">
+                        <i class="bi bi-calendar-check"></i>
+                        Reservar
+                    </a>
+                </nav>
+                
+                <!-- Mobile Language Selector -->
+                <div class="mt-4 pt-3 border-top">
+                    <div id="language-app-mobile" class="language-selector">
+                        <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="20" height="15" class="rounded">
+                        <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
                             <option value="pt" data-i18n="lang.pt">Português</option>
                             <option value="en" data-i18n="lang.en">English</option>
                             <option value="es" data-i18n="lang.es">Español</option>
                         </select>
                     </div>
                 </div>
-
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
-                    aria-label="Abrir menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
-                    <nav aria-label="Links principais do site">
-                        <ul class="navbar-nav me-3">
-                            <li class="nav-item">
-                                <a id="link-instalacoes" class="nav-link" href="./pages/instalacoes.html"
-                                    data-i18n="instalacoes">Instalações</a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="link-localizacao" class="nav-link" href="#localizacao"
-                                    data-i18n="localizacao">Localização</a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="link-contato" class="nav-link" href="#reserva"
-                                    data-i18n="reservarLink">Reservar</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Offcanvas (menu mobile) -->
-                <div class="offcanvas offcanvas-end bg-light d-lg-none" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel" aria-modal="true" role="dialog">
-                    <div class="offcanvas-header">
-                        <h2 class="offcanvas-title text-dark fw-bold" id="offcanvasNavbarLabel" data-i18n="menu">Menu
-                        </h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                            aria-label="Fechar menu"></button>
-                    </div>
-
-                    <div class="offcanvas-body d-flex flex-column align-items-center">
-
-                        <!-- Menu -->
-                        <nav aria-label="Menu mobile" class="w-100">
-                            <ul class="navbar-nav text-center gap-4 mt-2">
-                                <li class="nav-item">
-                                    <a id="mobile-link-instalacoes" class="nav-link text-dark fw-semibold fs-5"
-                                        href="./pages/instalacoes.html" data-i18n="instalacoes">Instalações</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="mobile-link-localizacao" class="nav-link text-dark fw-semibold fs-5"
-                                        href="#localizacao" data-i18n="localizacao">Localização</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="mobile-link-contato" class="nav-link text-dark fw-semibold fs-5"
-                                        href="#reserva" data-i18n="reservarLink">Reservar</a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                        <!-- Seletor de idioma (mobile) -->
-                        <div id="language-app-mobile" class="d-flex align-items-center gap-2 mt-5">
-                            <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="35" height="30"
-                                class="rounded-circle" />
-                            <select v-model="currentLang" @change="changeLanguage"
-                                class="form-select form-select-sm custom-select-modern" aria-label="Seleção de idioma">
-                                <option value="pt" data-i18n="lang.pt">Português</option>
-                                <option value="en" data-i18n="lang.en">English</option>
-                                <option value="es" data-i18n="lang.es">Español</option>
-                            </select>
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </div>
-        </nav>
-    </header>
-
-    <!--Carrossel banner-->
-
-    <section class="py-4 bg-light banner" data-aos="flip-left" data-aos-duration="3000">
-        <div class="container">
-            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-                <div class="carousel-inner rounded-4 overflow-hidden">
-                    <div class="carousel-item active">
-                        <div class="d-block d-md-none">
-                            <img src="./img/banner/casa.webp" class="d-block w-100" alt="Casa de dois andares"
-                                loading="lazy" decoding="async" />
-                        </div>
-                        <div class="d-none d-md-block">
-                            <img src="./img/banner/casa.webp" class="d-block w-100" alt="Casa de dois andares"
-                                loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="d-block d-md-none">
-                            <img src="./img/banner/piscina.webp" class="d-block w-100" alt="Casa e piscina"
-                                loading="lazy" decoding="async" />
-                        </div>
-                        <div class="d-none d-md-block">
-                            <img src="./img/banner/piscina.webp" class="d-block w-100" alt="Casa e piscina"
-                                loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="d-block d-md-none">
-                            <img src="./img/banner/quintal.webp" class="d-block w-100" alt="Quintal visto da varanda"
-                                loading="lazy" decoding="async" />
-                        </div>
-                        <div class="d-none d-md-block">
-                            <img src="./img/banner/quintal.webp" class="d-block w-100" alt="Quintal visto da varanda"
-                                loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="d-block d-md-none">
-                            <img src="./img/banner/quintalNoite.webp" class="d-block w-100"
-                                alt="Casa e quintal de noite" loading="lazy" decoding="async" />
-                        </div>
-                        <div class="d-none d-md-block">
-                            <img src="./img/banner/quintalNoite.webp" class="d-block w-100"
-                                alt="Casa e quintal de noite" loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="d-block d-md-none">
-                            <img src="./img/banner/piscinaNoite.webp" class="d-block w-100"
-                                alt="Piscina com coqueiros de noite" loading="lazy" decoding="async" />
-                        </div>
-                        <div class="d-none d-md-block">
-                            <img src="./img/banner/piscinaNoite.webp" class="d-block w-100"
-                                alt="Piscina com coqueiros de noite" loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!--Comodidades-->
-
-    <section class="secao" id="comodidades" data-aos="fade-up" data-aos-duration="3000">
-        <h4 data-i18n="comodidades">Comodidades</h4>
-        <ul class="comodidades list-unstyled d-flex gap-4 justify-content-center">
-            <li class="comodidade d-flex flex-column align-items-center">
-                <i class="bi bi-snow" style="font-size: 2rem;"></i>
-                <span class="texto mt-2" data-i18n="ar">Ar-condicionado</span>
-            </li>
-
-            <li class="comodidade d-flex flex-column align-items-center">
-                <i class="fa-solid fa-bed" style="font-size: 2rem;"></i>
-                <span class="texto mt-2" data-i18n="suites">03 Suítes</span>
-            </li>
-
-            <li class="comodidade d-flex flex-column align-items-center">
-                <i class="bi bi-people-fill" style="font-size: 2rem;"></i>
-                <span class="texto mt-2" data-i18n="maxPessoas">Máx. 20</span>
-            </li>
-
-            <li class="comodidade d-flex flex-column align-items-center">
-                <i class="fa-solid fa-table-tennis-paddle-ball" style="font-size: 2rem;"></i>
-                <span class="texto mt-2" data-i18n="jogos">Jogos</span>
-            </li>
-
-            <li class="comodidade d-flex flex-column align-items-center">
-                <i class="bi bi-wifi" style="font-size: 2rem;"></i>
-                <span class="texto mt-2" data-i18n="wifi">Wi-Fi</span>
-            </li>
-        </ul>
-    </section>
-
-    <!-- Localização -->
-
-    <main>
-        <section id="localizacao" class="container my-5 localizacao" aria-labelledby="titulo-localizacao"
-            data-aos="flip-down" data-aos-duration="3000">
-            <h2 class="text-center mb-5" id="titulo-localizacao" data-i18n="localizacao">Localização</h2>
-
-            <div class="row flex-column flex-md-row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                    <h2 class="mb-3 d-none d-md-block" data-i18n="localizacaoTitulo">Localização Privilegiada</h2>
-                    <p data-i18n-html="texto1">
-                        Estamos situados na <strong>Avenida Ademar Avelino Barreto, 114</strong>, no tranquilo bairro
-                        Verde Vale, em Saquarema - RJ.
-                    </p>
-                    <p data-i18n="texto2">
-                        A apenas 10 minutos do centro de Bacaxá e de Saquarema, você estará próximo às famosas praias de
-                        Itaúna, palco de competições de surf e à encantadora Praia da Vila.
-                    </p>
-                    <p data-i18n="texto3">
-                        Uma região que combina sossego, fácil acesso e o melhor do litoral carioca.
-                    </p>
-
-                    <!-- Botões -->
-                    <div class="d-flex flex-column flex-md-row gap-2 mt-3">
-                        <a href="https://www.google.com/maps/place/SaquaStraub/@-22.8963876,-42.4822001,17z/data=!3m1!4b1!4m6!3m5!1s0x975f9b6e4ea585:0xd7e2ffced1e7cce1!8m2!3d-22.8963926!4d-42.4796252!16s%2Fg%2F11xynyy6ct?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" rel="noopener"
-                            class="btn btn-outline-primary d-inline-flex align-items-center gap-2 justify-content-center"
-                            aria-label="Abrir no Google Maps">
-                            <i class="bi bi-map"></i>
-                            <span data-i18n="abrirGoogleMaps">Abrir no Google Maps</span>
-                        </a>
-
-
-                        <a href="https://waze.com/ul?q=Avenida+Ademar+Avelino+Barreto+114,+Verde+Vale,+Saquarema,+RJ&navigate=yes"
-                            target="_blank" rel="noopener"
-                            class="btn btn-outline-success d-inline-flex align-items-center gap-2 justify-content-center"
-                            aria-label="Abrir no Waze">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span data-i18n="abrirWaze">Abrir no Waze</span>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="top">
+            <!-- Hero Carousel -->
+            <div class="hero-carousel" id="heroCarousel">
+                <div class="hero-slide active">
+                    <img src="./img/banner/casa.webp" alt="Casa de dois andares" class="hero-image" loading="eager">
+                </div>
+                <div class="hero-slide">
+                    <img src="./img/banner/piscina.webp" alt="Casa e piscina" class="hero-image" loading="lazy">
+                </div>
+                <div class="hero-slide">
+                    <img src="./img/banner/quintal.webp" alt="Quintal visto da varanda" class="hero-image" loading="lazy">
+                </div>
+                <div class="hero-slide">
+                    <img src="./img/banner/quintalNoite.webp" alt="Casa e quintal de noite" class="hero-image" loading="lazy">
+                </div>
+                <div class="hero-slide">
+                    <img src="./img/banner/piscinaNoite.webp" alt="Piscina com coqueiros de noite" class="hero-image" loading="lazy">
+                </div>
+            </div>
+            
+            <!-- Hero Overlay -->
+            <div class="hero-overlay"></div>
+            
+            <!-- Hero Content -->
+            <div class="container-custom">
+                <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="hero-title" data-i18n="heroTitle">Casa de praia aluguel por temporada - Saquarema RJ</h1>
+                    <p class="hero-subtitle" data-i18n="heroSubtitle">Desfrute de momentos inesquecíveis em uma casa completa com piscina, churrasqueira e toda comodidade que você merece</p>
+                    <div class="hero-cta">
+                        <a href="#reserva" class="btn-modern btn-accent btn-hero">
+                            <i class="bi bi-calendar-check"></i>
+                            <span data-i18n="heroButton">Reserve Agora</span>
                         </a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Hero Navigation Dots -->
+            <div class="hero-nav">
+                <span class="hero-dot active" data-slide="0"></span>
+                <span class="hero-dot" data-slide="1"></span>
+                <span class="hero-dot" data-slide="2"></span>
+                <span class="hero-dot" data-slide="3"></span>
+                <span class="hero-dot" data-slide="4"></span>
+            </div>
+        </section>
 
-                <div class="col-md-6">
-                    <figure class="ratio ratio-4x3 m-0">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1503.3259023716514!2d-42.48005213373573!3d-22.89907625940859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1718555000000!5m2!1spt-BR!2sbr"
-                            style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Mapa com a localização da casa de praia em Saquarema">
-                        </iframe>
-                        <figcaption class="visually-hidden" data-i18n="mapaDescricao">Localização da casa de praia no
-                            Google Maps</figcaption>
-                    </figure>
+        <!-- Gallery Section -->
+        <section class="section-padding" id="galeria" data-aos="fade-up">
+            <div class="container-custom">
+                <h2 class="section-title" data-i18n="galeriaTitle">Galeria de Fotos</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="./img/externa/externa01.jpg" alt="Casa de praia Saquarema - Área externa com piscina e churrasqueira" class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="./img/externa/externa02.jpg" alt="Piscina casa praia Saquarema - Área de lazer completa" class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="./img/externa/externa03.jpg" alt="Churrasqueira casa temporada Saquarema - Área gourmet" class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="./img/externa/externa04.jpg" alt="Quintal casa praia Verde Vale Saquarema - Espaço família" class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="./img/externa/externa05.jpg" alt="Área lazer casa aluguel Saquarema - Diversão garantida" class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="./img/externa/externa06.jpg" alt="Casa praia Saquarema noite - Iluminação ambiente" class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="./pages/instalacoes.html" class="btn-modern btn-outline">
+                        <i class="bi bi-images"></i>
+                        <span data-i18n="verTodasFotos">Ver Todas as Fotos</span>
+                    </a>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Faça sua reserva -->
+        <!-- Amenities Section -->
+        <section class="section-padding" style="background: var(--neutral-100);" id="comodidades" data-aos="fade-up">
+            <div class="container-custom">
+                <h2 class="section-title" data-i18n="comodidades">Comodidades</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="amenity-icon">
+                            <i class="bi bi-snow"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="ar">Ar-condicionado</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="amenity-icon">
+                            <i class="bi bi-house-door"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="suites">03 Suítes</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="amenity-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="maxPessoas">Máx. 20</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="amenity-icon">
+                            <i class="bi bi-fire"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="churrasqueira">Churrasqueira</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="amenity-icon">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="banheiros">06 Banheiros</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="amenity-icon">
+                            <i class="bi bi-wifi"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="wifi">Wi-Fi</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="700">
+                        <div class="amenity-icon">
+                            <i class="bi bi-water"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="piscina">Piscina</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="800">
+                        <div class="amenity-icon">
+                            <img src="https://img.icons8.com/?size=100&id=12675&format=png&color=ffffff" alt="Ping Pong" style="width: 24px; height: 24px;">
+                        </div>
+                        <h3 class="amenity-title" data-i18n="pingpong">Ping Pong</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="900">
+                        <div class="amenity-icon">
+                            <i class="bi bi-8-circle-fill"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="sinuca">Sinuca</h3>
+                    </div>
+                    <div class="amenity-card" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="amenity-icon">
+                            <i class="bi bi-person"></i>
+                        </div>
+                        <h3 class="amenity-title" data-i18n="toto">Totó</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="reserva-wrapper" data-aos="zoom-in" data-aos-duration="3000">
+        <!-- Installations Preview Section -->
+        <section class="section-padding" id="instalacoes-preview" data-aos="fade-up">
+            <div class="container-custom">
+                <h2 class="section-title" data-i18n="instalacoesTitle">Conheça Nossas Instalações</h2>
+                <p class="text-center mb-5" data-i18n="instalacoesSubtitle">Descubra todos os ambientes e comodidades que tornam sua estadia inesquecível. Áreas internas e externas pensadas para seu conforto e diversão.</p>
+                
+                <div class="installations-grid">
+                    <div class="installation-card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="installation-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h3 data-i18n="areaExternaTitle">Área Externa</h3>
+                        <p data-i18n="areaExternaDesc">Amplo espaço ao ar livre com piscina, churrasqueira e área de lazer completa para momentos únicos.</p>
+                        <ul class="installation-features">
+                            <li data-i18n="piscinaRefrescante">Piscina refrescante</li>
+                            <li data-i18n="churrasqueiraEspacosa">Churrasqueira espaçosa</li>
+                            <li data-i18n="chuveiraoAoArLivre">Chuveirão ao ar livre</li>
+                            <li data-i18n="quintalArborizado">Quintal arborizado</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="installation-card" data-aos="fade-left" data-aos-delay="400">
+                        <div class="installation-icon">
+                            <i class="bi bi-house"></i>
+                        </div>
+                        <h3 data-i18n="areaInternaTitle">Área Interna</h3>
+                        <p data-i18n="areaInternaDesc">Ambientes climatizados e confortáveis distribuídos em dois andares, com tudo que você precisa.</p>
+                        <ul class="installation-features">
+                            <li data-i18n="suitesClimatizadas">3 suítes climatizadas</li>
+                            <li data-i18n="salaEspacosa">Sala espaçosa com jogos</li>
+                            <li data-i18n="cozinhaEquipada">Cozinha equipada</li>
+                            <li data-i18n="varandaVista">Varanda com vista</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="./pages/instalacoes.html" class="btn-modern btn-primary">
+                        <i class="bi bi-images"></i>
+                        <span data-i18n="verTodasInstalacoes">Ver Todas as Instalações</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        <section id="reserva" class="py-5 bg-light">
-            <div class="container reserva-form">
-                <h2 class="text-center mb-4" data-i18n="facaReserva">Faça sua Reserva</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="mb-3">
+        <!-- Location Section -->
+        <section class="section-padding" style="background: var(--neutral-100);" id="localizacao" data-aos="fade-up">
+            <div class="container-custom">
+                <h2 class="section-title" data-i18n="localizacao">Localização</h2>
+                
+                <div class="location-content">
+                    <div class="location-info" data-aos="fade-right">
+                        <h3 data-i18n="localizacaoTitulo">Localização Privilegiada</h3>
+                        <p data-i18n-html="texto1">Estamos situados na <strong>Avenida Ademar Avelino Barreto, 114</strong>, no tranquilo bairro Verde Vale, em Saquarema - RJ.</p>
+                        <p data-i18n="texto2">A apenas 10 minutos do centro de Bacaxá e de Saquarema, você estará próximo às famosas praias de Itaúna, palco de competições de surf e à encantadora Praia da Vila.</p>
+                        <p data-i18n="texto3">Uma região que combina sossego, fácil acesso e o melhor do litoral carioca.</p>
+                        
+                        <div class="location-buttons">
+                            <a href="https://www.google.com/maps/place/SaquaStraub/@-22.8963876,-42.4822001,17z" target="_blank" rel="noopener" class="btn-modern btn-primary">
+                                <i class="bi bi-map"></i>
+                                <span data-i18n="abrirGoogleMaps">Abrir no Google Maps</span>
+                            </a>
+                            <a href="https://waze.com/ul?q=Avenida+Ademar+Avelino+Barreto+114,+Verde+Vale,+Saquarema,+RJ&navigate=yes" target="_blank" rel="noopener" class="btn-modern btn-accent">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span data-i18n="abrirWaze">Abrir no Waze</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="location-map" data-aos="fade-left">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1503.3259023716514!2d-42.48005213373573!3d-22.89907625940859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1718555000000!5m2!1spt-BR!2sbr" 
+                                style="border:0; width: 100%; height: 400px; border-radius: var(--radius-xl);" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa com a localização da casa de praia em Saquarema">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nearby Attractions Section -->
+        <section class="section-padding" id="atracoes" data-aos="fade-up">
+            <div class="container-custom">
+                <h2 class="section-title" data-i18n="atracoesTitle">Explore os Encantos de Saquarema</h2>
+                <p class="text-center mb-5" data-i18n="atracoesSubtitle">Descubra as maravilhas que cercam nossa casa: praias paradisíacas, cultura local e diversão garantida para toda a família, tudo a poucos minutos de distância.</p>
+                
+                <div class="attractions-grid">
+                    <div class="attraction-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="attraction-icon">
+                            <img src="https://img.icons8.com/?size=100&id=hJl9s4grf1QH&format=png&color=ffffff" alt="Igreja" style="width: 24px; height: 24px;">
+                        </div>
+                        <h3 data-i18n="paroquia">Paróquia Nossa Senhora de Nazareth</h3>
+                        <p class="attraction-distance">3.5 km • 7 min</p>
+                        <p data-i18n="paroquiaDesc">Igreja histórica e centro espiritual da comunidade local, com arquitetura tradicional.</p>
+                    </div>
+                    
+                    <div class="attraction-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="attraction-icon">
+                            <i class="bi bi-sun"></i>
+                        </div>
+                        <h3 data-i18n="praiaVila">Praia da Vila</h3>
+                        <p class="attraction-distance">4.8 km • 8 min</p>
+                        <p data-i18n="praiaVilaDesc">Praia encantadora e tranquila, perfeita para famílias e momentos de relaxamento.</p>
+                    </div>
+                    
+                    <div class="attraction-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="attraction-icon">
+                            <i class="bi bi-water"></i>
+                        </div>
+                        <h3 data-i18n="praiaItauna">Praia de Itaúna</h3>
+                        <p class="attraction-distance">6.5 km • 10 min</p>
+                        <p data-i18n="praiaItaunaDesc">Mundialmente famosa por suas ondas perfeitas e competições internacionais de surf.</p>
+                    </div>
+                    
+                    <div class="attraction-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="attraction-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3 data-i18n="centroSaquarema">Centro de Saquarema</h3>
+                        <p class="attraction-distance">3.2 km • 6 min</p>
+                        <p data-i18n="centroSaquaremaDesc">Centro histórico com comércio diversificado, restaurantes e serviços essenciais.</p>
+                    </div>
+                    
+                    <div class="attraction-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="attraction-icon">
+                            <i class="bi bi-cup-hot"></i>
+                        </div>
+                        <h3 data-i18n="bacaxa">Bacaxá</h3>
+                        <p class="attraction-distance">2.8 km • 5 min</p>
+                        <p data-i18n="bacaxaDesc">Distrito gastronômico com excelentes restaurantes e vida noturna vibrante.</p>
+                    </div>
+                    
+                    <div class="attraction-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="attraction-icon">
+                            <img src="https://img.icons8.com/?size=100&id=9820&format=png&color=ffffff" alt="Futebol" style="width: 24px; height: 24px;">
+                        </div>
+                        <h3 data-i18n="estadioBoaVista">Estádio do Boa Vista</h3>
+                        <p class="attraction-distance">1.2 km • 3 min</p>
+                        <p data-i18n="estadioBoaVistaDesc">Estádio municipal que recebe jogos de futebol e grandes eventos esportivos da região.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section class="section-padding" style="background: var(--neutral-100);" id="reserva" data-aos="fade-up">
+            <div class="container-custom">
+                <div class="reservation-container">
+                    <div class="reservation-form">
+                        <h2 class="section-title" data-i18n="facaReserva">Faça sua Reserva</h2>
+                        
+                        <div class="form-group">
                             <label for="checkin" class="form-label" data-i18n="dataEntrada">Data de Entrada</label>
                             <input type="date" id="checkin" class="form-control" :placeholder="t('placeholderData')">
-                            <span id="erroCheckin" class="text-danger small d-none" data-i18n="erroCheckin">
-                                Selecione uma data de hoje ou superior.
-                            </span>
+                            <span id="erroCheckin" class="error-message d-none" data-i18n="erroCheckin">Selecione uma data de hoje ou superior.</span>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="form-group">
                             <label for="checkout" class="form-label" data-i18n="dataSaida">Data de Saída</label>
                             <input type="date" id="checkout" class="form-control" :placeholder="t('placeholderData')">
-                            <span id="erroCheckout" class="text-danger small d-none" data-i18n="erroCheckout">
-                                A data de saída deve ser igual ou posterior à data de entrada.
-                            </span>
+                            <span id="erroCheckout" class="error-message d-none" data-i18n="erroCheckout">A data de saída deve ser igual ou posterior à data de entrada.</span>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="pacote" class="form-label" data-i18n="selecionePacote">Selecione o
-                                Pacote</label>
-                            <select id="pacote" class="form-select">
+                        <div class="form-group">
+                            <label for="pacote" class="form-label" data-i18n="selecionePacote">Selecione o Pacote</label>
+                            <select id="pacote" class="form-control">
                                 <option value="" disabled selected data-i18n="escolhaOpcao">Escolha uma opção</option>
                                 <option data-i18n="pacote10">Até 10 pessoas</option>
                                 <option data-i18n="pacote15">Até 15 pessoas</option>
@@ -335,53 +563,56 @@
                             </select>
                         </div>
 
-                        <div class="d-grid">
-                            <button id="btnReservar" class="btn btn-success" disabled data-i18n="botaoReservar">
-                                Reservar via WhatsApp
-                            </button>
-                        </div>
+                        <button id="btnReservar" class="btn-modern btn-accent w-100" disabled>
+                            <i class="bi bi-whatsapp"></i>
+                            <span data-i18n="botaoReservar">Reservar via WhatsApp</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
-    <!-- Footer -->
-
-    <footer class="bg-light text-center text-muted py-4" id="contato">
-        <div class="container">
-            <p class="mb-2 fw-bold">SaquaStraub</p>
-
-            <div class="mb-3 d-flex justify-content-center align-items-center gap-3">
-                <a href="https://wa.me/5521976011899?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20casa%20em%20Saquarema%20que%20vi%20no%20site.%20Podemos%20conversar%3F"
-                    target="_blank" class="text-muted" aria-label="WhatsApp" role="img">
-                    <i class="bi bi-whatsapp fs-5" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/saquastraub/" class="text-muted" aria-label="Instagram" role="img">
-                    <i class="bi bi-instagram fs-5" aria-hidden="true"></i>
-                </a>
-                <a href="mailto:saquastraub@gmail.com" class="text-muted" aria-label="E-mail" role="img">
-                    <i class="bi bi-envelope fs-4" aria-hidden="true"></i>
-                </a>
+    <!-- Modern Footer -->
+    <footer class="footer-modern" id="contato">
+        <div class="container-custom">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">SaquaStraub</h3>
+                    <p class="footer-description" data-i18n="footerDescription">Sua casa de praia dos sonhos em Saquarema. Momentos inesquecíveis te esperam.</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://wa.me/5521976011899?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20casa%20em%20Saquarema%20que%20vi%20no%20site.%20Podemos%20conversar%3F" target="_blank" class="social-link whatsapp" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/saquastraub/" target="_blank" class="social-link instagram" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="mailto:saquastraub@gmail.com" class="social-link email" aria-label="E-mail">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
             </div>
-
-            <div class="text-center small text-muted">
-                <p class="fw-bold">
-                    2025<i class="bi bi-c-circle mx-1 fw-bold"></i> |
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-copyright">
+                <p class="mb-0">
+                    <strong>2025 © SaquaStraub</strong> | 
                     <span data-i18n="copyright">Todos os direitos reservados.</span>
                 </p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://unpkg.com/vue-i18n@9/dist/vue-i18n.global.prod.js"></script>
-    <script src="./js/idiomas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="./js/idiomas.js"></script>
     <script src="./js/formulario.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="script.js"></script>
 </body>
-
 </html>

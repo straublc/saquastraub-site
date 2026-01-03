@@ -60,8 +60,8 @@ validarDatas();
 
     const mensagem = 
     `Olá! Estou planejando uma viagem para Saquarema e gostaria de reservar:\n\n` +
-    `📅 Período: ${entradaFormatada} a ${saidaFormatada}\n\n` +
-    `👥 Pacote: ${pacote}\n\n` +
+    `Período: ${entradaFormatada} a ${saidaFormatada}\n\n` +
+    `Pacote: ${pacote}\n\n` +
     `Pode me passar as informações de disponibilidade?`;
 
     const numeroWhatsApp = "5521976011899";

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Página Principal -->
+    <url>
+        <loc>https://www.saquastraub.com.br/</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.saquastraub.com.br/img/banner/casa.webp</image:loc>
+            <image:title>Casa de Praia SaquaStraub em Saquarema RJ</image:title>
+            <image:caption>Casa de praia para aluguel temporada com piscina e churrasqueira</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.saquastraub.com.br/img/banner/piscina.webp</image:loc>
+            <image:title>Piscina Casa de Praia Saquarema</image:title>
+            <image:caption>Piscina refrescante para toda família</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Página de Instalações -->
+    <url>
+        <loc>https://www.saquastraub.com.br/pages/instalacoes.html</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.saquastraub.com.br/img/externa/externa01.jpg</image:loc>
+            <image:title>Área Externa Casa Praia Saquarema</image:title>
+            <image:caption>Área externa completa com piscina e churrasqueira</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.saquastraub.com.br/img/internaTerreo/sala01.jpg</image:loc>
+            <image:title>Área Interna Casa Temporada Saquarema</image:title>
+            <image:caption>Sala espaçosa com ar-condicionado e Wi-Fi</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Versões em outros idiomas -->
+    <url>
+        <loc>https://www.saquastraub.com.br/?lang=en</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.saquastraub.com.br/?lang=es</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
