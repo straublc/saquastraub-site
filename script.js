@@ -1,12 +1,27 @@
-// Modern SaquaStraub Website JavaScript
+// Modern SaquaStraub Website JavaScript - Optimized
+(function() {
+    'use strict';
+    
+    // Performance optimization: use requestAnimationFrame for smooth animations
+    let ticking = false;
+    
+    function requestTick(callback) {
+        if (!ticking) {
+            requestAnimationFrame(callback);
+            ticking = true;
+        }
+    }
+
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== NAVBAR SCROLL EFFECT =====
+    // ===== NAVBAR SCROLL EFFECT - OTIMIZADO =====
     const navbar = document.getElementById('navbar');
-    let lastScrollY = window.scrollY;
+    let lastScrollY = 0;
+    let scrollTicking = false;
     
     function updateNavbar() {
-        const currentScrollY = window.scrollY;
+        // Usar pageYOffset que é mais otimizado que scrollY
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
         
         if (currentScrollY > 50) {
             navbar.classList.add('scrolled');
@@ -15,43 +30,79 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScrollY = currentScrollY;
+        scrollTicking = false; // Reset ticking flag
     }
     
-    window.addEventListener('scroll', updateNavbar, { passive: true });
+    window.addEventListener('scroll', function() {
+        if (!scrollTicking) {
+            requestAnimationFrame(updateNavbar);
+            scrollTicking = true;
+        }
+    }, { passive: true });
     
-    // ===== HERO CAROUSEL =====
-    const heroSlides = document.querySelectorAll('.hero-slide');
+    // ===== HERO BANNER CAROUSEL - NOVA IMPLEMENTAÇÃO =====
+    // Garantir que o primeiro slide esteja sempre ativo
+    function ensureHeroActive() {
+        const heroImages = document.querySelectorAll('.hero-bg-img');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        
+        if (heroImages.length > 0) {
+            // Remover active de todos
+            heroImages.forEach(img => img.classList.remove('active'));
+            heroDots.forEach(dot => dot.classList.remove('active'));
+            
+            // Adicionar active ao primeiro
+            heroImages[0].classList.add('active');
+            if (heroDots[0]) {
+                heroDots[0].classList.add('active');
+            }
+        }
+    }
+    
+    // Executar imediatamente
+    ensureHeroActive();
+    
+    // ===== HERO BANNER CAROUSEL =====
+    const heroImages = document.querySelectorAll('.hero-bg-img');
     const heroDots = document.querySelectorAll('.hero-dot');
     let currentSlide = 0;
     let slideInterval;
     
     function showSlide(index) {
-        // Remove active class from all slides and dots
-        heroSlides.forEach(slide => slide.classList.remove('active'));
+        // Remove active class from all images and dots
+        heroImages.forEach(img => img.classList.remove('active'));
         heroDots.forEach(dot => dot.classList.remove('active'));
         
-        // Add active class to current slide and dot
-        heroSlides[index].classList.add('active');
-        heroDots[index].classList.add('active');
+        // Add active class to current image and dot
+        if (heroImages[index]) {
+            heroImages[index].classList.add('active');
+        }
+        if (heroDots[index]) {
+            heroDots[index].classList.add('active');
+        }
         
         currentSlide = index;
     }
     
     function nextSlide() {
-        const next = (currentSlide + 1) % heroSlides.length;
+        const next = (currentSlide + 1) % heroImages.length;
         showSlide(next);
     }
     
     function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 5000);
+        if (heroImages.length > 1) {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
     }
     
     function stopSlideshow() {
         clearInterval(slideInterval);
     }
     
-    // Initialize slideshow
-    startSlideshow();
+    // Initialize slideshow only if there are images
+    if (heroImages.length > 0) {
+        startSlideshow();
+    }
     
     // Dot navigation
     heroDots.forEach((dot, index) => {
@@ -63,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Pause on hover
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        heroSection.addEventListener('mouseenter', stopSlideshow);
-        heroSection.addEventListener('mouseleave', startSlideshow);
+    const heroBanner = document.querySelector('.hero-banner');
+    if (heroBanner) {
+        heroBanner.addEventListener('mouseenter', stopSlideshow);
+        heroBanner.addEventListener('mouseleave', startSlideshow);
     }
     
     // ===== SMOOTH SCROLLING =====
@@ -92,35 +143,90 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== MOBILE MENU =====
-    const mobileLinks = document.querySelectorAll('#mobileMenu a[href^="#"]');
-    const offcanvasElement = document.getElementById('mobileMenu');
-    const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || new bootstrap.Offcanvas(offcanvasElement);
+    // ===== MOBILE MENU - CUSTOM IMPLEMENTATION =====
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     
-    // Close menu when clicking on links
-    mobileLinks.forEach(link => {
+    // Função para abrir o menu
+    function openMobileMenu() {
+        if (mobileMenuToggle) mobileMenuToggle.classList.add('active');
+        if (mobileMenu) mobileMenu.classList.add('active');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+        
+        // Usar requestAnimationFrame para evitar ajuste forçado
+        requestAnimationFrame(function() {
+            document.body.style.overflow = 'hidden'; // Previne scroll do body
+        });
+    }
+    
+    // Função para fechar o menu
+    function closeMobileMenu() {
+        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+        if (mobileMenu) mobileMenu.classList.remove('active');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+        
+        // Usar requestAnimationFrame para evitar ajuste forçado
+        requestAnimationFrame(function() {
+            document.body.style.overflow = ''; // Restaura scroll do body
+        });
+    }
+    
+    // Event listeners
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+    }
+    
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+    }
+    
+    // Fechar menu ao clicar nos links
+    mobileNavLinks.forEach(link => {
         link.addEventListener('click', function() {
-            offcanvas.hide();
+            // Se for um link âncora (#), fecha o menu
+            if (this.getAttribute('href').startsWith('#')) {
+                closeMobileMenu();
+            }
         });
     });
     
-    // Add staggered animation to menu items when opening
-    offcanvasElement.addEventListener('shown.bs.offcanvas', function() {
-        const menuItems = this.querySelectorAll('.mobile-nav-link');
-        menuItems.forEach((item, index) => {
-            item.style.animationDelay = `${(index + 1) * 0.1}s`;
-            item.classList.add('animate-in');
-        });
+    // Fechar menu com ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
     });
     
-    // Reset animations when closing
-    offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
-        const menuItems = this.querySelectorAll('.mobile-nav-link');
-        menuItems.forEach(item => {
-            item.classList.remove('animate-in');
-            item.style.animationDelay = '';
+    // Prevenir propagação de cliques dentro do menu
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
-    });
+    }
     
     // ===== GALLERY LIGHTBOX =====
     const galleryItems = document.querySelectorAll('.gallery-item');
@@ -172,8 +278,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        document.body.appendChild(lightbox);
-        document.body.style.overflow = 'hidden';
+        // Usar requestAnimationFrame para evitar ajuste forçado
+        requestAnimationFrame(function() {
+            document.body.appendChild(lightbox);
+            document.body.style.overflow = 'hidden';
+        });
         
         // Navigation functions
         function showImage(newIndex) {
@@ -199,8 +308,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close lightbox
         function closeLightbox() {
-            document.body.removeChild(lightbox);
-            document.body.style.overflow = '';
+            // Usar requestAnimationFrame para evitar ajuste forçado
+            requestAnimationFrame(function() {
+                if (lightbox && lightbox.parentNode) {
+                    document.body.removeChild(lightbox);
+                }
+                document.body.style.overflow = '';
+            });
         }
         
         // Event listeners
@@ -387,19 +501,40 @@ Podemos conversar sobre disponibilidade e valores?`;
     
     // ===== PERFORMANCE OPTIMIZATIONS =====
     
-    // Lazy load images
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    // Lazy load images inteligente
+    const lazyImages = document.querySelectorAll('img[loading="lazy"], picture');
     
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
+                    const target = entry.target;
+                    
+                    // Se for uma picture, procurar a img dentro dela
+                    const img = target.tagName === 'PICTURE' ? target.querySelector('img') : target;
+                    
+                    if (img) {
+                        // Marcar como carregada para evitar reprocessamento
+                        img.classList.add('loaded');
+                        
+                        // Fade-in mais rápido
+                        img.style.transition = 'opacity 0.2s ease';
+                        
+                        // Se a imagem já estiver carregada, mostrar imediatamente
+                        if (img.complete) {
+                            img.style.opacity = '1';
+                        } else {
+                            // Mostrar imediatamente, sem esperar o onload
+                            img.style.opacity = '1';
+                        }
+                        
+                        imageObserver.unobserve(target);
+                    }
                 }
             });
+        }, {
+            rootMargin: '100px 0px', // Carregar 100px antes para ser mais rápido
+            threshold: 0.01 // Threshold menor para carregar mais cedo
         });
         
         lazyImages.forEach(img => imageObserver.observe(img));
@@ -438,8 +573,11 @@ Podemos conversar sobre disponibilidade e valores?`;
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.focus();
-                target.scrollIntoView({ behavior: 'smooth' });
+                // Usar requestAnimationFrame para evitar ajuste forçado
+                requestAnimationFrame(function() {
+                    target.focus();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                });
             }
         });
     }
@@ -468,6 +606,8 @@ Podemos conversar sobre disponibilidade e valores?`;
     console.log('%c🏖️ SaquaStraub Website', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
     console.log('%cDesenvolvido com ❤️ para proporcionar a melhor experiência', 'color: #64748b; font-size: 12px;');
 });
+
+})(); // End of IIFE (Immediately Invoked Function Expression)
 
 // ===== LIGHTBOX STYLES =====
 const lightboxStyles = `
@@ -650,3 +790,37 @@ const lightboxStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = lightboxStyles;
 document.head.appendChild(styleSheet);
+    // ===== SERVICE WORKER PARA CACHE DE IMAGENS =====
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function(registration) {
+                    console.log('SW registrado com sucesso:', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Falha ao registrar SW:', error);
+                });
+        });
+    }
+    
+    // ===== PRELOAD INTELIGENTE DE IMAGENS =====
+    // Precarregar próximas imagens do carrossel
+    function preloadNextImages() {
+        const heroImages = [
+            './img/banner/piscina.webp',
+            './img/banner/quintal.webp',
+            './img/banner/quintalNoite.webp',
+            './img/banner/piscinaNoite.webp'
+        ];
+        
+        // Precarregar imediatamente após o DOM estar pronto
+        setTimeout(function() {
+            heroImages.forEach(function(src) {
+                const img = new Image();
+                img.src = src;
+            });
+        }, 200); // Delay mínimo de apenas 200ms
+    }
+    
+    // Iniciar preload inteligente
+    preloadNextImages();
