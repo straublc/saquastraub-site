@@ -473,7 +473,6 @@ a:hover {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Mobile Menu Overlay */
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
