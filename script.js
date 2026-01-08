@@ -138,9 +138,53 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        item.addEventListener('click', function() {
-            currentImageIndex = index;
-            openLightbox(img.src, img.alt, index);
+        // Add touch support for mobile
+        let touchStartTime = 0;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let hasMoved = false;
+        
+        item.addEventListener('touchstart', function(e) {
+            touchStartTime = Date.now();
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            hasMoved = false;
+        }, { passive: true });
+        
+        item.addEventListener('touchmove', function(e) {
+            const touchMoveX = e.touches[0].clientX;
+            const touchMoveY = e.touches[0].clientY;
+            const moveDistance = Math.sqrt(
+                Math.pow(touchMoveX - touchStartX, 2) + 
+                Math.pow(touchMoveY - touchStartY, 2)
+            );
+            
+            if (moveDistance > 10) {
+                hasMoved = true;
+            }
+        }, { passive: true });
+        
+        item.addEventListener('touchend', function(e) {
+            const touchEndTime = Date.now();
+            const touchDuration = touchEndTime - touchStartTime;
+            
+            // If it's a tap (short duration and no movement), open lightbox
+            if (touchDuration < 500 && !hasMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+                currentImageIndex = index;
+                openLightbox(img.src, img.alt, index);
+            }
+        }, { passive: false });
+        
+        // Keep click event for desktop and as fallback
+        item.addEventListener('click', function(e) {
+            // Only handle click if it's not a touch device or if touch events failed
+            if (!('ontouchstart' in window) || !hasMoved) {
+                e.preventDefault();
+                currentImageIndex = index;
+                openLightbox(img.src, img.alt, index);
+            }
         });
     });
     

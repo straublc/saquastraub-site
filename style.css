@@ -1041,11 +1041,43 @@ a:hover {
     box-shadow: var(--shadow-xl);
 }
 
+/* Mobile touch support */
+@media (hover: none) and (pointer: coarse) {
+    .gallery-item {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+    }
+    
+    .gallery-item:active {
+        transform: scale(0.98);
+    }
+    
+    .gallery-overlay {
+        opacity: 0.3;
+        background: rgba(30, 41, 59, 0.3);
+        pointer-events: none;
+    }
+    
+    .gallery-overlay i {
+        font-size: 1.5rem;
+    }
+    
+    /* Ensure images are clickable on mobile */
+    .gallery-image {
+        pointer-events: auto;
+    }
+}
+
 .gallery-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--transition-slow);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .gallery-item:hover .gallery-image {
@@ -1064,6 +1096,7 @@ a:hover {
     justify-content: center;
     opacity: 0;
     transition: all var(--transition-normal);
+    pointer-events: none;
 }
 
 .gallery-item:hover .gallery-overlay {
