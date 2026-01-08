@@ -1,95 +1,82 @@
 // Modern SaquaStraub Website JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== NAVBAR SCROLL EFFECT =====
+    // ===== HEADER SCROLL EFFECT =====
     const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
     
     function updateHeader() {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > 50) {
+        if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
-        lastScrollY = currentScrollY;
     }
     
     window.addEventListener('scroll', updateHeader, { passive: true });
     
-    // ===== HERO CAROUSEL =====
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const heroDots = document.querySelectorAll('.hero-dot');
+    // ===== HERO SLIDER =====
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
     let slideInterval;
     
     function showSlide(index) {
         // Remove active class from all slides and dots
-        heroSlides.forEach(slide => slide.classList.remove('active'));
-        heroDots.forEach(dot => dot.classList.remove('active'));
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
         
         // Add active class to current slide and dot
-        heroSlides[index].classList.add('active');
-        heroDots[index].classList.add('active');
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
         
         currentSlide = index;
     }
     
     function nextSlide() {
-        const next = (currentSlide + 1) % heroSlides.length;
+        const next = (currentSlide + 1) % slides.length;
         showSlide(next);
     }
     
-    function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 5000);
+    function startSlider() {
+        slideInterval = setInterval(nextSlide, 4000);
     }
     
-    function stopSlideshow() {
+    function stopSlider() {
         clearInterval(slideInterval);
     }
     
-    // Initialize slideshow
-    if (heroSlides.length > 0) {
-        startSlideshow();
+    // Initialize slider
+    if (slides.length > 0) {
+        startSlider();
         
         // Dot navigation
-        heroDots.forEach((dot, index) => {
+        dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 showSlide(index);
-                stopSlideshow();
-                startSlideshow(); // Restart timer
+                stopSlider();
+                startSlider(); // Restart timer
             });
         });
         
         // Pause on hover
-        const heroSection = document.querySelector('.hero');
+        const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
-            heroSection.addEventListener('mouseenter', stopSlideshow);
-            heroSection.addEventListener('mouseleave', startSlideshow);
+            heroSection.addEventListener('mouseenter', stopSlider);
+            heroSection.addEventListener('mouseleave', startSlider);
         }
     }
     
     // ===== SMOOTH SCROLLING =====
-    function smoothScroll(target) {
-        const element = document.querySelector(target);
-        if (element) {
-            const offsetTop = element.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    }
-    
-    // Handle anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = this.getAttribute('href');
-            if (target !== '#') {
-                smoothScroll(target);
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
     });
