@@ -52,67 +52,67 @@
     <!-- Skip to content for accessibility -->
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
-    <!-- Modern Header -->
-    <header>
-        <nav class="navbar-modern" id="navbar">
-            <div class="container-custom">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <!-- Logo -->
-                    <a href="../index.html" class="navbar-brand">
-                        <img src="../img/logo.png" alt="Logo SaquaStraub" class="navbar-logo">
-                    </a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <!-- Logo -->
+                <a href="../index.html" class="navbar-brand">
+                    <img src="../img/logo.png" alt="Logo SaquaStraub" class="logo">
+                </a>
 
-                    <!-- Desktop Navigation -->
-                    <div class="nav-desktop">
-                        <a href="../index.html" class="nav-link-modern" data-i18n="inicio">Início</a>
-                        <a href="../index.html#localizacao" class="nav-link-modern" data-i18n="localizacao">Localização</a>
-                        <a href="#reserva" class="nav-link-modern" data-i18n="reservarLink">Reservar</a>
-                        
-                        <!-- Language Selector -->
-                        <div id="language-app" class="language-selector">
-                            <img :src="'../img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="24" height="18" class="rounded">
-                            <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
-                                <option value="pt" data-i18n="lang.pt">Português</option>
-                                <option value="en" data-i18n="lang.en">English</option>
-                                <option value="es" data-i18n="lang.es">Español</option>
-                            </select>
-                        </div>
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <a href="../index.html" class="nav-link" data-i18n="inicio">Início</a>
+                    <a href="../index.html#localizacao" class="nav-link" data-i18n="localizacao">Localização</a>
+                    <a href="#reserva" class="nav-link" data-i18n="reservarLink">Reservar</a>
+                    
+                    <!-- Language Selector -->
+                    <div id="language-app" class="language-selector">
+                        <img :src="'../img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="24" height="18" class="flag-img">
+                        <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
+                            <option value="pt" data-i18n="lang.pt">Português</option>
+                            <option value="en" data-i18n="lang.en">English</option>
+                            <option value="es" data-i18n="lang.es">Español</option>
+                        </select>
                     </div>
-
-                    <!-- Mobile Menu Toggle -->
-                    <button class="mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
-                    </button>
                 </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Abrir menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </nav>
 
         <!-- Mobile Offcanvas Menu -->
-        <div class="offcanvas offcanvas-end offcanvas-modern" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-            <div class="offcanvas-header offcanvas-header-modern">
-                <h5 class="offcanvas-title offcanvas-title-modern" id="mobileMenuLabel" data-i18n="menu">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="mobileMenuLabel" data-i18n="menu">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
             </div>
-            <div class="offcanvas-body offcanvas-body-modern">
-                <nav>
+            <div class="offcanvas-body">
+                <nav class="mobile-nav">
                     <a href="../index.html" class="mobile-nav-link" data-i18n="inicio">
                         <i class="bi bi-house"></i>
-                        Início
+                        <span>Início</span>
                     </a>
                     <a href="../index.html#localizacao" class="mobile-nav-link" data-i18n="localizacao">
                         <i class="bi bi-geo-alt"></i>
-                        Localização
+                        <span>Localização</span>
                     </a>
                     <a href="#reserva" class="mobile-nav-link" data-i18n="reservarLink">
                         <i class="bi bi-calendar-check"></i>
-                        Reservar
+                        <span>Reservar</span>
                     </a>
                 </nav>
                 
                 <!-- Mobile Language Selector -->
-                <div class="mt-4 pt-3 border-top">
+                <div class="mobile-language">
                     <div id="language-app-mobile" class="language-selector">
-                        <img :src="'../img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="20" height="15" class="rounded">
+                        <img :src="'../img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="20" height="15" class="flag-img">
                         <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
                             <option value="pt" data-i18n="lang.pt">Português</option>
                             <option value="en" data-i18n="lang.en">English</option>
@@ -128,25 +128,25 @@
     <main id="main-content" style="margin-top: 100px;">
         
         <!-- Breadcrumbs -->
-        <nav aria-label="breadcrumb" class="container-custom" style="padding-top: var(--space-lg);">
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 1.5rem;">
             <ol class="breadcrumb" style="background: transparent; padding: 0; margin: 0;">
                 <li class="breadcrumb-item">
-                    <a href="../index.html" style="color: var(--accent-600); text-decoration: none;">
+                    <a href="../index.html" style="color: var(--accent-600, #0284c7); text-decoration: none;">
                         <i class="bi bi-house-door"></i> Início
                     </a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: var(--neutral-600);">
+                <li class="breadcrumb-item active" aria-current="page" style="color: var(--neutral-600, #4b5563);">
                     Instalações
                 </li>
             </ol>
         </nav>
         
         <!-- Page Header -->
-        <section class="section-padding" style="background: var(--neutral-100); padding-top: var(--space-2xl);">
-            <div class="container-custom">
+        <section class="section-padding" style="background: var(--neutral-100, #f3f4f6); padding-top: 3rem;">
+            <div class="container">
                 <div class="text-center" data-aos="fade-up">
                     <h1 class="mb-4" data-i18n="instalacoesTitle">Conheça Nossas Instalações</h1>
-                    <p class="lead mb-0" style="max-width: 600px; margin: 0 auto; color: var(--neutral-600);" data-i18n="instalacoesSubtitle">
+                    <p class="lead mb-0" style="max-width: 600px; margin: 0 auto; color: var(--neutral-600, #4b5563);" data-i18n="instalacoesSubtitle">
                         Descubra todos os ambientes e comodidades que tornam sua estadia inesquecível. 
                         Áreas internas e externas pensadas para seu conforto e diversão.
                     </p>
@@ -156,9 +156,9 @@
 
         <!-- Área Externa -->
         <section class="section-padding" id="area-externa" data-aos="fade-up">
-            <div class="container-custom">
+            <div class="container">
                 <h2 class="section-title" data-i18n="externaTitulo">Área Externa</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto var(--space-3xl); color: var(--neutral-600);" data-i18n="externaTexto">
+                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: var(--neutral-600, #4b5563);" data-i18n="externaTexto">
                     Desfrute de uma ampla e encantadora área externa, perfeita para reunir toda a galera! 
                     A casa conta com uma piscina refrescante, um chuveirão ao ar livre para aquele banho pós-praia e uma 
                     churrasqueira espaçosa, ideal para celebrar bons momentos.
@@ -225,9 +225,9 @@
 
         <!-- Área Externa Noturna -->
         <section class="section-padding" style="background: var(--neutral-100);" id="area-externa-noite" data-aos="fade-up">
-            <div class="container-custom">
+            <div class="container">
                 <h2 class="section-title" data-i18n="externaNoiteTitulo">Área Externa - Noite</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto var(--space-3xl); color: var(--neutral-600);" data-i18n="externaNoiteTexto">
+                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: var(--neutral-600, #4b5563);" data-i18n="externaNoiteTexto">
                     À noite, a área externa ganha um charme especial com a iluminação ambiente, 
                     criando o cenário perfeito para momentos românticos e confraternizações inesquecíveis.
                 </p>
@@ -293,9 +293,9 @@
 
         <!-- Área Interna - Térreo -->
         <section class="section-padding" id="terreo" data-aos="fade-up">
-            <div class="container-custom">
+            <div class="container">
                 <h2 class="section-title" data-i18n="terreoTitulo">Área Interna - Térreo</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto var(--space-3xl); color: var(--neutral-600);" data-i18n="terreoTexto">
+                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: var(--neutral-600, #4b5563);" data-i18n="terreoTexto">
                     No térreo você encontra uma sala espaçosa com Wi-Fi e mesa de ping-pong, 
                     cozinha equipada com duas geladeiras, uma suíte climatizada e banheiro de apoio.
                 </p>
@@ -379,9 +379,9 @@
 
         <!-- Área Interna - Segundo Andar -->
         <section class="section-padding" style="background: var(--neutral-100);" id="segundo-andar" data-aos="fade-up">
-            <div class="container-custom">
+            <div class="container">
                 <h2 class="section-title" data-i18n="segundoAndarTitulo">Área Interna - Segundo Andar</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto var(--space-3xl); color: var(--neutral-600);" data-i18n="segundoAndarTexto">
+                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: var(--neutral-600, #4b5563);" data-i18n="segundoAndarTexto">
                     No andar superior, você encontra uma varanda com vista para o quintal, 
                     sala com poltronas e mesa de sinuca, banheiro e duas suítes climatizadas.
                 </p>
@@ -447,7 +447,7 @@
 
         <!-- Reservation Section -->
         <section class="section-padding" id="reserva" data-aos="fade-up">
-            <div class="container-custom">
+            <div class="container">
                 <div class="reservation-container">
                     <div class="reservation-form">
                         <h2 class="section-title" data-i18n="facaReserva">Faça sua Reserva</h2>
@@ -474,7 +474,7 @@
                             </select>
                         </div>
 
-                        <button id="btnReservar" class="btn-modern btn-accent w-100" disabled>
+                        <button id="btnReservar" class="btn btn-primary w-100" disabled>
                             <i class="bi bi-whatsapp"></i>
                             <span data-i18n="botaoReservar">Reservar via WhatsApp</span>
                         </button>
@@ -486,7 +486,7 @@
 
     <!-- Modern Footer -->
     <footer class="footer-modern" id="contato">
-        <div class="container-custom">
+        <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3 class="footer-logo">SaquaStraub</h3>

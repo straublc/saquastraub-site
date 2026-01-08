@@ -2,22 +2,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ===== NAVBAR SCROLL EFFECT =====
-    const navbar = document.getElementById('navbar');
+    const header = document.querySelector('.header');
     let lastScrollY = window.scrollY;
     
-    function updateNavbar() {
+    function updateHeader() {
         const currentScrollY = window.scrollY;
         
         if (currentScrollY > 50) {
-            navbar.classList.add('scrolled');
+            header.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            header.classList.remove('scrolled');
         }
         
         lastScrollY = currentScrollY;
     }
     
-    window.addEventListener('scroll', updateNavbar, { passive: true });
+    window.addEventListener('scroll', updateHeader, { passive: true });
     
     // ===== HERO CAROUSEL =====
     const heroSlides = document.querySelectorAll('.hero-slide');
@@ -51,22 +51,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Initialize slideshow
-    startSlideshow();
-    
-    // Dot navigation
-    heroDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            stopSlideshow();
-            startSlideshow(); // Restart timer
+    if (heroSlides.length > 0) {
+        startSlideshow();
+        
+        // Dot navigation
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                stopSlideshow();
+                startSlideshow(); // Restart timer
+            });
         });
-    });
-    
-    // Pause on hover
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        heroSection.addEventListener('mouseenter', stopSlideshow);
-        heroSection.addEventListener('mouseleave', startSlideshow);
+        
+        // Pause on hover
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', stopSlideshow);
+            heroSection.addEventListener('mouseleave', startSlideshow);
+        }
     }
     
     // ===== SMOOTH SCROLLING =====
@@ -95,32 +97,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE MENU =====
     const mobileLinks = document.querySelectorAll('#mobileMenu a[href^="#"]');
     const offcanvasElement = document.getElementById('mobileMenu');
-    const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || new bootstrap.Offcanvas(offcanvasElement);
     
-    // Close menu when clicking on links
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            offcanvas.hide();
+    if (offcanvasElement) {
+        const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || new bootstrap.Offcanvas(offcanvasElement);
+        
+        // Close menu when clicking on links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                offcanvas.hide();
+            });
         });
-    });
-    
-    // Add staggered animation to menu items when opening
-    offcanvasElement.addEventListener('shown.bs.offcanvas', function() {
-        const menuItems = this.querySelectorAll('.mobile-nav-link');
-        menuItems.forEach((item, index) => {
-            item.style.animationDelay = `${(index + 1) * 0.1}s`;
-            item.classList.add('animate-in');
-        });
-    });
-    
-    // Reset animations when closing
-    offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
-        const menuItems = this.querySelectorAll('.mobile-nav-link');
-        menuItems.forEach(item => {
-            item.classList.remove('animate-in');
-            item.style.animationDelay = '';
-        });
-    });
+    }
     
     // ===== GALLERY LIGHTBOX =====
     const galleryItems = document.querySelectorAll('.gallery-item');

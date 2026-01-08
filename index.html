@@ -146,67 +146,67 @@
     <!-- Skip to content for accessibility -->
     <a href="#main-content" class="skip-link" data-i18n="skipToContent">Pular para o conteúdo</a>
 
-    <!-- Modern Header -->
-    <header>
-        <nav class="navbar-modern" id="navbar">
-            <div class="container-custom">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <!-- Logo -->
-                    <a href="#top" class="navbar-brand">
-                        <img src="./img/logo.png" alt="Logo SaquaStraub" class="navbar-logo">
-                    </a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <!-- Logo -->
+                <a href="#top" class="navbar-brand">
+                    <img src="./img/logo.png" alt="Logo SaquaStraub" class="logo">
+                </a>
 
-                    <!-- Desktop Navigation -->
-                    <div class="nav-desktop">
-                        <a href="./pages/instalacoes.html" class="nav-link-modern" data-i18n="instalacoes">Instalações</a>
-                        <a href="#localizacao" class="nav-link-modern" data-i18n="localizacao">Localização</a>
-                        <a href="#reserva" class="nav-link-modern" data-i18n="reservarLink">Reservar</a>
-                        
-                        <!-- Language Selector -->
-                        <div id="language-app" class="language-selector">
-                            <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="24" height="18" class="rounded">
-                            <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
-                                <option value="pt" data-i18n="lang.pt">Português</option>
-                                <option value="en" data-i18n="lang.en">English</option>
-                                <option value="es" data-i18n="lang.es">Español</option>
-                            </select>
-                        </div>
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <a href="./pages/instalacoes.html" class="nav-link" data-i18n="instalacoes">Instalações</a>
+                    <a href="#localizacao" class="nav-link" data-i18n="localizacao">Localização</a>
+                    <a href="#reserva" class="nav-link" data-i18n="reservarLink">Reservar</a>
+                    
+                    <!-- Language Selector -->
+                    <div id="language-app" class="language-selector">
+                        <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="24" height="18" class="flag-img">
+                        <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
+                            <option value="pt" data-i18n="lang.pt">Português</option>
+                            <option value="en" data-i18n="lang.en">English</option>
+                            <option value="es" data-i18n="lang.es">Español</option>
+                        </select>
                     </div>
-
-                    <!-- Mobile Menu Toggle -->
-                    <button class="mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
-                    </button>
                 </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Abrir menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </nav>
 
         <!-- Mobile Offcanvas Menu -->
-        <div class="offcanvas offcanvas-end offcanvas-modern" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-            <div class="offcanvas-header offcanvas-header-modern">
-                <h5 class="offcanvas-title offcanvas-title-modern" id="mobileMenuLabel" data-i18n="menu">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="mobileMenuLabel" data-i18n="menu">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
             </div>
-            <div class="offcanvas-body offcanvas-body-modern">
-                <nav>
+            <div class="offcanvas-body">
+                <nav class="mobile-nav">
                     <a href="./pages/instalacoes.html" class="mobile-nav-link" data-i18n="instalacoes">
                         <i class="bi bi-images"></i>
-                        Instalações
+                        <span>Instalações</span>
                     </a>
                     <a href="#localizacao" class="mobile-nav-link" data-i18n="localizacao">
                         <i class="bi bi-geo-alt"></i>
-                        Localização
+                        <span>Localização</span>
                     </a>
                     <a href="#reserva" class="mobile-nav-link" data-i18n="reservarLink">
                         <i class="bi bi-calendar-check"></i>
-                        Reservar
+                        <span>Reservar</span>
                     </a>
                 </nav>
                 
                 <!-- Mobile Language Selector -->
-                <div class="mt-4 pt-3 border-top">
+                <div class="mobile-language">
                     <div id="language-app-mobile" class="language-selector">
-                        <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="20" height="15" class="rounded">
+                        <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Bandeira" width="20" height="15" class="flag-img">
                         <select v-model="currentLang" @change="changeLanguage" class="language-select" aria-label="Seleção de idioma">
                             <option value="pt" data-i18n="lang.pt">Português</option>
                             <option value="en" data-i18n="lang.en">English</option>
@@ -221,23 +221,23 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero-section" id="top">
+        <section class="hero" id="top">
             <!-- Hero Carousel -->
             <div class="hero-carousel" id="heroCarousel">
                 <div class="hero-slide active">
-                    <img src="./img/banner/casa.webp" alt="Casa de dois andares" class="hero-image" loading="eager">
+                    <img src="./img/banner/casa.webp" alt="Casa de dois andares" class="hero-img" loading="eager">
                 </div>
                 <div class="hero-slide">
-                    <img src="./img/banner/piscina.webp" alt="Casa e piscina" class="hero-image" loading="lazy">
+                    <img src="./img/banner/piscina.webp" alt="Casa e piscina" class="hero-img" loading="lazy">
                 </div>
                 <div class="hero-slide">
-                    <img src="./img/banner/quintal.webp" alt="Quintal visto da varanda" class="hero-image" loading="lazy">
+                    <img src="./img/banner/quintal.webp" alt="Quintal visto da varanda" class="hero-img" loading="lazy">
                 </div>
                 <div class="hero-slide">
-                    <img src="./img/banner/quintalNoite.webp" alt="Casa e quintal de noite" class="hero-image" loading="lazy">
+                    <img src="./img/banner/quintalNoite.webp" alt="Casa e quintal de noite" class="hero-img" loading="lazy">
                 </div>
                 <div class="hero-slide">
-                    <img src="./img/banner/piscinaNoite.webp" alt="Piscina com coqueiros de noite" class="hero-image" loading="lazy">
+                    <img src="./img/banner/piscinaNoite.webp" alt="Piscina com coqueiros de noite" class="hero-img" loading="lazy">
                 </div>
             </div>
             
@@ -245,12 +245,12 @@
             <div class="hero-overlay"></div>
             
             <!-- Hero Content -->
-            <div class="container-custom">
+            <div class="container">
                 <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
                     <h1 class="hero-title" data-i18n="heroTitle">Casa de praia aluguel por temporada - Saquarema RJ</h1>
                     <p class="hero-subtitle" data-i18n="heroSubtitle">Desfrute de momentos inesquecíveis em uma casa completa com piscina, churrasqueira e toda comodidade que você merece</p>
                     <div class="hero-cta">
-                        <a href="#reserva" class="btn-modern btn-accent btn-hero">
+                        <a href="#reserva" class="btn btn-primary btn-lg">
                             <i class="bi bi-calendar-check"></i>
                             <span data-i18n="heroButton">Reserve Agora</span>
                         </a>
@@ -259,12 +259,12 @@
             </div>
             
             <!-- Hero Navigation Dots -->
-            <div class="hero-nav">
-                <span class="hero-dot active" data-slide="0"></span>
-                <span class="hero-dot" data-slide="1"></span>
-                <span class="hero-dot" data-slide="2"></span>
-                <span class="hero-dot" data-slide="3"></span>
-                <span class="hero-dot" data-slide="4"></span>
+            <div class="hero-dots">
+                <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+                <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+                <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+                <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
             </div>
         </section>
 
