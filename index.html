@@ -146,121 +146,89 @@
     <!-- Skip to content for accessibility -->
     <a href="#main-content" class="skip-link" data-i18n="skipToContent">Pular para o conteúdo</a>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <!-- Logo -->
-            <a href="#top" class="logo-link">
-                <img src="./img/logo.png" alt="SaquaStraub" class="logo">
+    <!-- Header Simples -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="./img/logo.png" alt="SaquaStraub">
             </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <a href="./pages/instalacoes.html" class="nav-item" data-i18n="instalacoes">Instalações</a>
-                <a href="#localizacao" class="nav-item" data-i18n="localizacao">Localização</a>
-                <a href="#reserva" class="nav-item" data-i18n="reservarLink">Reservar</a>
+            
+            <div class="nav-menu">
+                <a href="./pages/instalacoes.html" class="nav-link" data-i18n="instalacoes">Instalações</a>
+                <a href="#localizacao" class="nav-link" data-i18n="localizacao">Localização</a>
+                <a href="#reserva" class="nav-link" data-i18n="reservarLink">Reservar</a>
                 
-                <!-- Language Selector -->
-                <div id="language-app" class="lang-selector">
+                <div id="language-app" class="nav-lang">
                     <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Flag" width="20" height="15">
-                    <select v-model="currentLang" @change="changeLanguage" class="lang-select">
+                    <select v-model="currentLang" @change="changeLanguage">
                         <option value="pt" data-i18n="lang.pt">PT</option>
                         <option value="en" data-i18n="lang.en">EN</option>
                         <option value="es" data-i18n="lang.es">ES</option>
                     </select>
                 </div>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" data-i18n="menu">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
-            <div class="offcanvas-body">
-                <nav class="mobile-nav">
-                    <a href="./pages/instalacoes.html" class="mobile-nav-item" data-i18n="instalacoes">
-                        <i class="bi bi-images"></i>
-                        Instalações
-                    </a>
-                    <a href="#localizacao" class="mobile-nav-item" data-i18n="localizacao">
-                        <i class="bi bi-geo-alt"></i>
-                        Localização
-                    </a>
-                    <a href="#reserva" class="mobile-nav-item" data-i18n="reservarLink">
-                        <i class="bi bi-calendar-check"></i>
-                        Reservar
-                    </a>
-                </nav>
-                
-                <div class="mobile-lang">
-                    <div id="language-app-mobile" class="lang-selector">
-                        <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Flag" width="20" height="15">
-                        <select v-model="currentLang" @change="changeLanguage" class="lang-select">
-                            <option value="pt" data-i18n="lang.pt">Português</option>
-                            <option value="en" data-i18n="lang.en">English</option>
-                            <option value="es" data-i18n="lang.es">Español</option>
-                        </select>
-                    </div>
+            
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="./pages/instalacoes.html" class="mobile-link" data-i18n="instalacoes">
+                <i class="bi bi-images"></i> Instalações
+            </a>
+            <a href="#localizacao" class="mobile-link" data-i18n="localizacao">
+                <i class="bi bi-geo-alt"></i> Localização
+            </a>
+            <a href="#reserva" class="mobile-link" data-i18n="reservarLink">
+                <i class="bi bi-calendar-check"></i> Reservar
+            </a>
+            
+            <div class="mobile-lang">
+                <div id="language-app-mobile" class="nav-lang">
+                    <img :src="'./img/bandeiras/' + flags[currentLang]" alt="Flag" width="20" height="15">
+                    <select v-model="currentLang" @change="changeLanguage">
+                        <option value="pt" data-i18n="lang.pt">Português</option>
+                        <option value="en" data-i18n="lang.en">English</option>
+                        <option value="es" data-i18n="lang.es">Español</option>
+                    </select>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section" id="top">
-            <div class="hero-slider">
-                <div class="hero-slide active">
-                    <img src="./img/banner/casa.webp" alt="Casa" loading="eager">
-                </div>
-                <div class="hero-slide">
-                    <img src="./img/banner/piscina.webp" alt="Piscina" loading="lazy">
-                </div>
-                <div class="hero-slide">
-                    <img src="./img/banner/quintal.webp" alt="Quintal" loading="lazy">
-                </div>
-                <div class="hero-slide">
-                    <img src="./img/banner/quintalNoite.webp" alt="Quintal Noite" loading="lazy">
-                </div>
-                <div class="hero-slide">
-                    <img src="./img/banner/piscinaNoite.webp" alt="Piscina Noite" loading="lazy">
-                </div>
+        <!-- Hero Banner -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-slide active" style="background-image: url('./img/banner/casa.webp')"></div>
+                <div class="hero-slide" style="background-image: url('./img/banner/piscina.webp')"></div>
+                <div class="hero-slide" style="background-image: url('./img/banner/quintal.webp')"></div>
+                <div class="hero-slide" style="background-image: url('./img/banner/quintalNoite.webp')"></div>
+                <div class="hero-slide" style="background-image: url('./img/banner/piscinaNoite.webp')"></div>
             </div>
             
-            <!-- Hero Overlay -->
             <div class="hero-overlay"></div>
             
-            <!-- Hero Content -->
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title" data-i18n="heroTitle">Casa de praia aluguel por temporada - Saquarema RJ</h1>
-                    <p class="hero-subtitle" data-i18n="heroSubtitle">Desfrute de momentos inesquecíveis em uma casa completa com piscina, churrasqueira e toda comodidade que você merece</p>
-                    <div class="hero-cta">
-                        <a href="#reserva" class="hero-btn">
-                            <i class="bi bi-calendar-check"></i>
-                            <span data-i18n="heroButton">Reserve Agora</span>
-                        </a>
-                    </div>
-                </div>
+                <h1 class="hero-title" data-i18n="heroTitle">Casa de praia aluguel por temporada - Saquarema RJ</h1>
+                <p class="hero-text" data-i18n="heroSubtitle">Desfrute de momentos inesquecíveis em uma casa completa com piscina, churrasqueira e toda comodidade que você merece</p>
+                <a href="#reserva" class="hero-btn" data-i18n="heroButton">
+                    <i class="bi bi-calendar-check"></i>
+                    Reserve Agora
+                </a>
             </div>
             
-            <!-- Navigation Dots -->
-            <div class="hero-dots">
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
-                <button class="dot" data-slide="2"></button>
-                <button class="dot" data-slide="3"></button>
-                <button class="dot" data-slide="4"></button>
+            <div class="hero-nav">
+                <button class="nav-dot active" onclick="currentSlide(1)"></button>
+                <button class="nav-dot" onclick="currentSlide(2)"></button>
+                <button class="nav-dot" onclick="currentSlide(3)"></button>
+                <button class="nav-dot" onclick="currentSlide(4)"></button>
+                <button class="nav-dot" onclick="currentSlide(5)"></button>
             </div>
         </section>
 

@@ -1,99 +1,75 @@
-// Modern SaquaStraub Website JavaScript
+// JavaScript Simples e Funcional
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== HEADER SCROLL EFFECT =====
-    const header = document.querySelector('.header');
-    
-    function updateHeader() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    }
-    
-    window.addEventListener('scroll', updateHeader, { passive: true });
-    
-    // ===== HERO SLIDER =====
-    const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let slideInterval;
-    
-    function showSlide(index) {
-        // Remove active class from all slides and dots
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current slide and dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        
-        currentSlide = index;
-    }
-    
-    function nextSlide() {
-        const next = (currentSlide + 1) % slides.length;
-        showSlide(next);
-    }
-    
-    function startSlider() {
-        slideInterval = setInterval(nextSlide, 4000);
-    }
-    
-    function stopSlider() {
-        clearInterval(slideInterval);
-    }
-    
-    // Initialize slider
-    if (slides.length > 0) {
-        startSlider();
-        
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-                stopSlider();
-                startSlider(); // Restart timer
-            });
-        });
-        
-        // Pause on hover
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection) {
-            heroSection.addEventListener('mouseenter', stopSlider);
-            heroSection.addEventListener('mouseleave', startSlider);
-        }
-    }
-    
-    // ===== SMOOTH SCROLLING =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
     // ===== MOBILE MENU =====
-    const mobileLinks = document.querySelectorAll('#mobileMenu a[href^="#"]');
-    const offcanvasElement = document.getElementById('mobileMenu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNav = document.getElementById('mobile-nav');
     
-    if (offcanvasElement) {
-        const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || new bootstrap.Offcanvas(offcanvasElement);
+    if (mobileMenu && mobileNav) {
+        mobileMenu.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            
+            // Animar hamburger
+            const bars = mobileMenu.querySelectorAll('.bar');
+            bars.forEach(bar => bar.classList.toggle('active'));
+        });
         
-        // Close menu when clicking on links
+        // Fechar menu ao clicar em link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
-                offcanvas.hide();
+                mobileNav.classList.remove('active');
+                const bars = mobileMenu.querySelectorAll('.bar');
+                bars.forEach(bar => bar.classList.remove('active'));
             });
         });
+    }
+    
+    // ===== HERO SLIDER =====
+    let slideIndex = 1;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.nav-dot');
+    
+    if (slides.length > 0 && dots.length > 0) {
+        // Função para mostrar slide
+        function showSlide(n) {
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            // Remover active de todos
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Adicionar active ao atual
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+        
+        // Função para slide atual (chamada pelos dots)
+        window.currentSlide = function(n) {
+            slideIndex = n;
+            showSlide(slideIndex);
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, 4000);
+        }
+        
+        // Próximo slide
+        function nextSlide() {
+            slideIndex++;
+            showSlide(slideIndex);
+        }
+        
+        // Auto slide
+        let autoSlide = setInterval(nextSlide, 4000);
+        
+        // Pausar ao hover
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.addEventListener('mouseenter', () => clearInterval(autoSlide));
+            hero.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(nextSlide, 4000);
+            });
+        }
     }
     
     // ===== GALLERY LIGHTBOX =====
@@ -290,44 +266,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== MOBILE GALLERY SCROLL INDICATOR =====
-    const galleries = document.querySelectorAll('.gallery-grid');
-    
-    galleries.forEach(gallery => {
-        let hasScrolled = false;
-        
-        gallery.addEventListener('scroll', function() {
-            if (!hasScrolled) {
-                hasScrolled = true;
-                this.classList.add('scrolled');
-            }
-        }, { passive: true });
-        
-        // Also hide indicator on touch
-        gallery.addEventListener('touchstart', function() {
-            if (!hasScrolled) {
-                hasScrolled = true;
-                this.classList.add('scrolled');
-            }
-        }, { passive: true });
-    });
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    }, observerOptions);
-    
-    // Observe all elements with animate-on-scroll class
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
     });
+    
+    // ===== NAVBAR SCROLL =====
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    }
     
     // ===== FORM VALIDATION =====
     const checkinInput = document.getElementById('checkin');
@@ -354,7 +317,8 @@ document.addEventListener('DOMContentLoaded', function() {
             today.setHours(0, 0, 0, 0);
             
             if (checkinDate < today) {
-                document.getElementById('erroCheckin').classList.remove('d-none');
+                const erroCheckin = document.getElementById('erroCheckin');
+                if (erroCheckin) erroCheckin.classList.remove('d-none');
                 isValid = false;
             }
         }
@@ -365,21 +329,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const checkoutDate = new Date(checkout);
             
             if (checkoutDate < checkinDate) {
-                document.getElementById('erroCheckout').classList.remove('d-none');
+                const erroCheckout = document.getElementById('erroCheckout');
+                if (erroCheckout) erroCheckout.classList.remove('d-none');
                 isValid = false;
             }
         }
         
         // Enable/disable button
-        if (checkin && checkout && pacote && isValid) {
+        if (checkin && checkout && pacote && isValid && reservarBtn) {
             reservarBtn.disabled = false;
-        } else {
+        } else if (reservarBtn) {
             reservarBtn.disabled = true;
         }
     }
     
     // Add event listeners for form validation
-    if (checkinInput && checkoutInput && pacoteSelect) {
+    if (checkinInput && checkoutInput && pacoteSelect && reservarBtn) {
         checkinInput.addEventListener('change', validateForm);
         checkoutInput.addEventListener('change', validateForm);
         pacoteSelect.addEventListener('change', validateForm);
@@ -400,50 +365,6 @@ Podemos conversar sobre disponibilidade e valores?`;
             
             const whatsappUrl = `https://wa.me/5521976011899?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
-        });
-    }
-    
-    // ===== PERFORMANCE OPTIMIZATIONS =====
-    
-    // Lazy load images
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        lazyImages.forEach(img => imageObserver.observe(img));
-    }
-    
-    // Preload critical images
-    const criticalImages = [
-        './img/banner/casa.webp',
-        './img/banner/piscina.webp'
-    ];
-    
-    criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-    });
-    
-    // ===== INITIALIZE AOS =====
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 600,
-            once: true,
-            offset: 50,
-            easing: 'ease-out-cubic'
         });
     }
     
@@ -476,11 +397,15 @@ Podemos conversar sobre disponibilidade e valores?`;
         });
     });
     
-    // ===== ERROR HANDLING =====
-    window.addEventListener('error', function(e) {
-        console.error('JavaScript Error:', e.error);
-        // You could send this to an error tracking service
-    });
+    // ===== INITIALIZE AOS =====
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-cubic'
+        });
+    }
     
     // ===== CONSOLE WELCOME MESSAGE =====
     console.log('%c🏖️ SaquaStraub Website', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
