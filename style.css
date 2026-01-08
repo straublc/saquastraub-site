@@ -308,7 +308,7 @@ a:hover {
 }
 
 .logo {
-    height: 50px;
+    height: 70px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -411,25 +411,34 @@ a:hover {
 /* Mobile Navigation */
 .offcanvas {
     width: 320px !important;
+    z-index: 1055 !important;
+}
+
+.offcanvas-backdrop {
+    z-index: 1050 !important;
 }
 
 .offcanvas-header {
     background: linear-gradient(135deg, #0ea5e9, #0284c7);
     color: white;
     border-bottom: none;
+    padding: 1.5rem;
 }
 
 .offcanvas-title {
     font-weight: 600;
     font-size: 1.2rem;
+    margin: 0;
 }
 
 .btn-close {
     filter: invert(1);
+    opacity: 1;
 }
 
 .offcanvas-body {
     padding: 2rem 1.5rem;
+    background: white;
 }
 
 .mobile-nav {
@@ -447,6 +456,7 @@ a:hover {
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .mobile-nav-item:hover {
@@ -457,6 +467,7 @@ a:hover {
 .mobile-nav-item i {
     font-size: 1.2rem;
     width: 20px;
+    text-align: center;
 }
 
 .mobile-lang {
@@ -491,6 +502,9 @@ a:hover {
     height: 100vh;
     min-height: 600px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-slider {
@@ -520,6 +534,75 @@ a:hover {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/* Hero Overlay - Azul */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.7) 0%, rgba(2, 132, 199, 0.6) 100%);
+    z-index: 2;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: white;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0ea5e9;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-btn:hover {
+    background: white;
+    color: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation Dots */
@@ -553,41 +636,24 @@ a:hover {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 1rem;
-    right: 2rem;
-    z-index: 10;
-    animation: bounce 2s infinite;
-}
-
-.scroll-arrow {
-    width: 24px;
-    height: 24px;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: rotate(45deg);
-    opacity: 0.7;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) rotate(45deg);
-    }
-    40% {
-        transform: translateY(-10px) rotate(45deg);
-    }
-    60% {
-        transform: translateY(-5px) rotate(45deg);
-    }
-}
-
 /* Responsive Hero */
 @media (max-width: 768px) {
     .hero-section {
         height: 80vh;
         min-height: 500px;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    
+    .hero-btn {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
     }
     
     .hero-dots {
@@ -598,16 +664,6 @@ a:hover {
     .dot {
         width: 10px;
         height: 10px;
-    }
-    
-    .scroll-indicator {
-        right: 1rem;
-        bottom: 0.5rem;
-    }
-    
-    .scroll-arrow {
-        width: 20px;
-        height: 20px;
     }
 }
 
