@@ -17,7 +17,7 @@ const messages = {
     wifi: "Wi-Fi",
     localizacaoTitulo: "Localização Privilegiada",
     texto1:
-      "Estamos situados na <strong>Avenida Ademar Avelino Barreto, 114</strong>, no tranquilo bairro Verde Vale, em Saquarema - RJ.",
+      "Estamos situados na <strong>Avenida Ademar Aurelino Barreto, 114</strong>, no tranquilo bairro Verde Vale, em Saquarema - RJ.",
     texto2:
       "A apenas 10 minutos do centro de Bacaxá e de Saquarema, você estará próximo às famosas praias de Itaúna, palco de competições de surf e à encantadora Praia da Vila.",
     texto3: "Uma região que combina sossego, fácil acesso e o melhor do litoral carioca.",
@@ -108,7 +108,7 @@ const messages = {
     wifi: "Wi-Fi",
     localizacaoTitulo: "Prime Location",
     texto1:
-      "We are located at <strong>Avenida Ademar Avelino Barreto, 114</strong>, in the peaceful Verde Vale neighborhood in Saquarema - RJ.",
+      "We are located at <strong>Avenida Ademar Aurelino Barreto, 114</strong>, in the peaceful Verde Vale neighborhood in Saquarema - RJ.",
     texto2:
       "Just 10 minutes from downtown Bacaxá and Saquarema, close to the famous Itaúna beaches, a surf competition hub and the charming Praia da Vila.",
     texto3: "An area that combines tranquility, easy access, and the best of Rio’s coast.",
@@ -199,7 +199,7 @@ const messages = {
     wifi: "Wi-Fi",
     localizacaoTitulo: "Ubicación privilegiada",
     texto1:
-      "Estamos ubicados en la <strong>Avenida Ademar Avelino Barreto, 114</strong>, en el tranquilo barrio Verde Vale en Saquarema - RJ.",
+      "Estamos ubicados en la <strong>Avenida Ademar Aurelino Barreto, 114</strong>, en el tranquilo barrio Verde Vale en Saquarema - RJ.",
     texto2:
       "A solo 10 minutos del centro de Bacaxá y de Saquarema, cerca de las famosas playas de Itaúna, escenario de competiciones de surf y de la encantadora Praia da Vila.",
     texto3: "Una región que combina tranquilidad, fácil acceso y lo mejor del litoral de Río.",
