@@ -1,547 +1,300 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B13CP5JBL4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-B13CP5JBL4');
-    </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B13CP5JBL4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-B13CP5JBL4');
+  </script>
 
-    <!-- Meta Tags SEO Otimizadas -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Lucas Straub">
-    <meta name="description" content="Veja todas as instalações da casa de praia SaquaStraub em Saquarema RJ: piscina, churrasqueira, 3 suítes climatizadas, área externa e interna completas.">
-    <meta name="keywords" content="instalações casa praia saquarema, fotos casa temporada, piscina churrasqueira saquarema, suites climatizadas, área externa casa praia">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Instalações Casa de Praia Saquarema - Piscina e Churrasqueira | SaquaStraub">
-    <meta property="og:description" content="Conheça todas as instalações: piscina, churrasqueira, 3 suítes climatizadas e áreas de lazer completas.">
-    <meta property="og:image" content="https://www.saquastraub.com.br/img/externa/externa01.jpg">
-    <meta property="og:url" content="https://www.saquastraub.com.br/pages/instalacoes.html">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.saquastraub.com.br/pages/instalacoes.html">
-    
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    
-    <!-- Title Otimizado -->
-    <title>Instalações Casa de Praia Saquarema - Piscina e Churrasqueira | SaquaStraub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veja as instalações da casa SaquaStraub em Saquarema: piscina, churrasqueira, 3 suítes climatizadas e áreas de lazer completas.">
+  <meta property="og:title" content="Instalações — SaquaStraub, Casa de Praia em Saquarema RJ">
+  <meta property="og:image" content="https://www.saquastraub.com.br/img/externa/externa01.jpg">
+  <link rel="canonical" href="https://www.saquastraub.com.br/pages/instalacoes.html">
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+  <title>Instalações — Casa de Praia em Saquarema | SaquaStraub</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap & Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
-    <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
-    <!-- Header Simples -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../img/logo.png" alt="SaquaStraub">
-            </a>
-            
-            <div class="nav-menu">
-                <a href="../index.html" class="nav-link" data-i18n="inicio">Início</a>
-                <a href="../index.html#localizacao" class="nav-link" data-i18n="localizacao">Localização</a>
-                <a href="#reserva" class="nav-link" data-i18n="reservarLink">Reservar</a>
-                
-                <div id="language-app" class="nav-lang">
-                    <img :src="'../img/bandeiras/' + flags[currentLang]" alt="Flag" width="20" height="15">
-                    <select v-model="currentLang" @change="changeLanguage">
-                        <option value="pt" data-i18n="lang.pt">PT</option>
-                        <option value="en" data-i18n="lang.en">EN</option>
-                        <option value="es" data-i18n="lang.es">ES</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-nav" id="mobile-nav">
-            <a href="../index.html" class="mobile-link" data-i18n="inicio">
-                <i class="bi bi-house"></i> Início
-            </a>
-            <a href="../index.html#localizacao" class="mobile-link" data-i18n="localizacao">
-                <i class="bi bi-geo-alt"></i> Localização
-            </a>
-            <a href="#reserva" class="mobile-link" data-i18n="reservarLink">
-                <i class="bi bi-calendar-check"></i> Reservar
-            </a>
-            
-            <div class="mobile-lang">
-                <div id="language-app-mobile" class="nav-lang">
-                    <img :src="'../img/bandeiras/' + flags[currentLang]" alt="Flag" width="20" height="15">
-                    <select v-model="currentLang" @change="changeLanguage">
-                        <option value="pt" data-i18n="lang.pt">Português</option>
-                        <option value="en" data-i18n="lang.en">English</option>
-                        <option value="es" data-i18n="lang.es">Español</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <a href="#main-content" class="skip-link" data-i18n="skipToContent">Pular para o conteúdo</a>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        
-        <!-- Breadcrumbs -->
-        <nav aria-label="breadcrumb" class="container-custom" style="padding-top: 6rem;">
-            <ol class="breadcrumb" style="background: transparent; padding: 0; margin: 0;">
-                <li class="breadcrumb-item">
-                    <a href="../index.html" style="color: #0ea5e9; text-decoration: none;">
-                        <i class="bi bi-house-door"></i> Início
-                    </a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #666;">
-                    Instalações
-                </li>
-            </ol>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo" aria-label="SaquaStraub — Página inicial">
+        <img src="../img/logo.png" alt="SaquaStraub" width="120" height="48">
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="navbar__links">
+          <li><a href="../index.html" data-i18n="inicio">Início</a></li>
+          <li><a href="../index.html#localizacao" data-i18n="localizacao">Localização</a></li>
+          <li><a href="#reserva" class="btn btn--primary" style="padding:.5rem 1.25rem;font-size:.85rem" data-i18n="reservarLink">Reservar</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language Picker Desktop -->
+      <div class="lang-picker" id="lang-picker" role="navigation" aria-label="Seleção de idioma">
+        <button class="lang-picker__btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+          <img id="lang-flag" src="../img/bandeiras/br.webp" alt="" aria-hidden="true">
+          <span id="lang-label">PT</span>
+          <i class="bi bi-chevron-down chevron"></i>
+        </button>
+        <ul class="lang-picker__dropdown" id="lang-dropdown" role="listbox">
+          <li class="lang-picker__option active" data-lang="pt" role="option" tabindex="0">
+            <img src="../img/bandeiras/br.webp" alt="Bandeira do Brasil"> Português
+          </li>
+          <li class="lang-picker__option" data-lang="en" role="option" tabindex="0">
+            <img src="../img/bandeiras/us.webp" alt="USA Flag"> English
+          </li>
+          <li class="lang-picker__option" data-lang="es" role="option" tabindex="0">
+            <img src="../img/bandeiras/es.webp" alt="Bandera de España"> Español
+          </li>
+        </ul>
+      </div>
+
+      <button class="navbar__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="navbar__mobile" id="mobile-drawer" aria-hidden="true">
+    <div class="navbar__mobile-backdrop" id="mobile-backdrop"></div>
+    <div class="navbar__mobile-panel" role="dialog" aria-label="Menu de navegação">
+      <div class="navbar__mobile-header">
+        <img src="../img/logo.png" alt="SaquaStraub" height="36">
+        <button class="navbar__mobile-close" id="mobile-close" aria-label="Fechar menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <nav class="navbar__mobile-nav">
+        <a href="../index.html"><i class="bi bi-house"></i><span data-i18n="inicio">Início</span></a>
+        <a href="../index.html#localizacao"><i class="bi bi-geo-alt"></i><span data-i18n="localizacao">Localização</span></a>
+        <a href="#reserva"><i class="bi bi-calendar-check"></i><span data-i18n="reservarLink">Reservar</span></a>
+      </nav>
+      <div class="navbar__mobile-lang">
+        <p data-i18n="idiomaLabel">Idioma</p>
+        <div class="navbar__mobile-lang-options">
+          <button class="active" data-lang="pt"><img src="../img/bandeiras/br.webp" alt="">PT</button>
+          <button data-lang="en"><img src="../img/bandeiras/us.webp" alt="">EN</button>
+          <button data-lang="es"><img src="../img/bandeiras/es.webp" alt="">ES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <nav aria-label="Trilha de navegação">
+          <ol class="breadcrumb">
+            <li><a href="../index.html"><i class="bi bi-house-door"></i> <span data-i18n="inicio">Início</span></a></li>
+            <li class="breadcrumb__sep" aria-hidden="true"><i class="bi bi-chevron-right"></i></li>
+            <li aria-current="page" data-i18n="instalacoes">Instalações</li>
+          </ol>
         </nav>
-        
-        <!-- Page Header -->
-        <section class="section-padding" style="background: #f8f9fa; padding-top: 3rem;">
-            <div class="container-custom">
-                <div class="text-center" data-aos="fade-up">
-                    <h1 class="section-title" data-i18n="instalacoesTitle">Conheça Nossas Instalações</h1>
-                    <p class="lead mb-0" style="max-width: 600px; margin: 0 auto; color: #666;" data-i18n="instalacoesSubtitle">
-                        Descubra todos os ambientes e comodidades que tornam sua estadia inesquecível. 
-                        Áreas internas e externas pensadas para seu conforto e diversão.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Área Externa -->
-        <section class="section-padding" id="area-externa" data-aos="fade-up">
-            <div class="container-custom">
-                <h2 class="section-title" data-i18n="externaTitulo">Área Externa</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: #666;" data-i18n="externaTexto">
-                    Desfrute de uma ampla e encantadora área externa, perfeita para reunir toda a galera! 
-                    A casa conta com uma piscina refrescante, um chuveirão ao ar livre para aquele banho pós-praia e uma 
-                    churrasqueira espaçosa, ideal para celebrar bons momentos.
-                </p>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="../img/externa/externa01.jpg" alt="Área externa - Vista geral" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="../img/externa/externa02.jpg" alt="Piscina" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="../img/externa/externa03.jpg" alt="Churrasqueira" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="../img/externa/externa04.jpg" alt="Quintal" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="../img/externa/externa05.jpg" alt="Área de lazer" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="../img/externa/externa06.jpg" alt="Mesa de totó" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
-                        <img src="../img/externa/externa07.jpg" alt="Chuveirão externo" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800">
-                        <img src="../img/externa/externa08.jpg" alt="Redes para descanso" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="900">
-                        <img src="../img/externa/externa09.jpg" alt="Vista do quintal" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Área Externa Noturna -->
-        <section class="section-padding" style="background: #f8f9fa;" id="area-externa-noite" data-aos="fade-up">
-            <div class="container-custom">
-                <h2 class="section-title" data-i18n="externaNoiteTitulo">Área Externa - Noite</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: #666;" data-i18n="externaNoiteTexto">
-                    À noite, a área externa ganha um charme especial com a iluminação ambiente, 
-                    criando o cenário perfeito para momentos românticos e confraternizações inesquecíveis.
-                </p>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="../img/externaNoite/externaNoite01.jpg" alt="Área externa noturna - Vista geral" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="../img/externaNoite/externaNoite02.jpg" alt="Piscina iluminada" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="../img/externaNoite/externaNoite03.jpg" alt="Churrasqueira noturna" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="../img/externaNoite/externaNoite04.jpg" alt="Quintal noturno" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="../img/externaNoite/externaNoite05.jpg" alt="Área de lazer noturna" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="../img/externaNoite/externaNoite06.jpg" alt="Ambiente noturno" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
-                        <img src="../img/externaNoite/externaNoite07.jpg" alt="Iluminação ambiente" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800">
-                        <img src="../img/externaNoite/externaNoite08.jpg" alt="Vista noturna da casa" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="900">
-                        <img src="../img/externaNoite/externaNoite09.jpg" alt="Atmosfera noturna" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Área Interna - Térreo -->
-        <section class="section-padding" id="terreo" data-aos="fade-up">
-            <div class="container-custom">
-                <h2 class="section-title" data-i18n="terreoTitulo">Área Interna - Térreo</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: #666;" data-i18n="terreoTexto">
-                    No térreo você encontra uma sala espaçosa com Wi-Fi e mesa de ping-pong, 
-                    cozinha equipada com duas geladeiras, uma suíte climatizada e banheiro de apoio.
-                </p>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="../img/internaTerreo/sala00.jpeg" alt="Sala de estar" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="../img/internaTerreo/sala01.jpeg" alt="Sala de estar" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="../img/internaTerreo/sala02.jpeg" alt="Mesa da sala" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="../img/internaTerreo/sala03.jpeg" alt="Ambiente interno" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="../img/internaTerreo/ping01.jpeg" alt="Mesa de ping-pong" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="../img/internaTerreo/cozinha01.jpeg" alt="Cozinha equipada" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="../img/internaTerreo/cozinha02.jpeg" alt="Cozinha equipada" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
-                        <img src="../img/internaTerreo/cozinha03.jpeg" alt="Bancada da cozinha" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="../img/internaTerreo/cozinha04.jpeg" alt="Cozinha equipada" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800">
-                        <img src="../img/internaTerreo/banheiro01.jpeg" alt="Banheiro térreo" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="900">
-                        <img src="../img/internaTerreo/suite01.jpeg" alt="Suíte do térreo" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="../img/internaTerreo/suite02.jpeg" alt="Banheiro da suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="../img/internaTerreo/suite03.jpeg" alt="Banheiro da suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="../img/internaTerreo/suite04.jpeg" alt="Banheiro da suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="../img/internaTerreo/suite05.jpeg" alt="Banheiro da suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="../img/internaTerreo/suite06.jpeg" alt="Banheiro da suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1100">
-                        <img src="../img/internaTerreo/escada.jpg" alt="Escada para segundo andar" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="1200">
-                        <img src="../img/internaTerreo/escada01.jpg" alt="Acesso ao segundo andar" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Área Interna - Segundo Andar -->
-        <section class="section-padding" style="background: #f8f9fa;" id="segundo-andar" data-aos="fade-up">
-            <div class="container-custom">
-                <h2 class="section-title" data-i18n="segundoAndarTitulo">Área Interna - Segundo Andar</h2>
-                <p class="text-center mb-5" style="max-width: 800px; margin: 0 auto 3rem; color: #666;" data-i18n="segundoAndarTexto">
-                    No andar superior, você encontra uma varanda com vista para o quintal, 
-                    sala com poltronas e mesa de sinuca, banheiro e duas suítes climatizadas.
-                </p>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="../img/internaSegundoAndar/sinuca.jpg" alt="Mesa de sinuca" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="../img/internaSegundoAndar/banheiro02.jpg" alt="Banheiro segundo andar" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="../img/internaSegundoAndar/suite04.jpg" alt="Primeira suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="../img/internaSegundoAndar/suite05.jpg" alt="Banheiro da primeira suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="../img/internaSegundoAndar/suite06.jpg" alt="Segunda suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="../img/internaSegundoAndar/suite07.jpg" alt="Quarto da segunda suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
-                        <img src="../img/internaSegundoAndar/suite08.jpg" alt="Banheiro da segunda suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800">
-                        <img src="../img/internaSegundoAndar/suite09.jpg" alt="Detalhes da suíte" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="900">
-                        <img src="../img/internaSegundoAndar/varanda.jpg" alt="Varanda com vista" class="gallery-image" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reservation Section -->
-        <section class="section-padding" id="reserva" data-aos="fade-up">
-            <div class="container-custom">
-                <div class="reservation-container">
-                    <div class="reservation-form">
-                        <h2 class="section-title" data-i18n="facaReserva">Faça sua Reserva</h2>
-                        
-                        <div class="form-group">
-                            <label for="checkin" class="form-label" data-i18n="dataEntrada">Data de Entrada</label>
-                            <input type="date" id="checkin" class="form-control">
-                            <span id="erroCheckin" class="error-message d-none" data-i18n="erroCheckin">Selecione uma data de hoje ou superior.</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="checkout" class="form-label" data-i18n="dataSaida">Data de Saída</label>
-                            <input type="date" id="checkout" class="form-control">
-                            <span id="erroCheckout" class="error-message d-none" data-i18n="erroCheckout">A data de saída deve ser igual ou posterior à data de entrada.</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pacote" class="form-label" data-i18n="selecionePacote">Selecione o Pacote</label>
-                            <select id="pacote" class="form-control">
-                                <option value="" disabled selected data-i18n="escolhaOpcao">Escolha uma opção</option>
-                                <option data-i18n="pacote10">Até 10 pessoas</option>
-                                <option data-i18n="pacote15">Até 15 pessoas</option>
-                                <option data-i18n="pacote20">Até 20 pessoas</option>
-                            </select>
-                        </div>
-
-                        <button id="btnReservar" class="btn-modern btn-accent w-100" disabled>
-                            <i class="bi bi-whatsapp"></i>
-                            <span data-i18n="botaoReservar">Reservar via WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Modern Footer -->
-    <footer class="footer-modern" id="contato">
-        <div class="container-custom">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3 class="footer-logo">SaquaStraub</h3>
-                    <p class="footer-description" data-i18n="footerDescription">Sua casa de praia dos sonhos em Saquarema. Momentos inesquecíveis te esperam.</p>
-                </div>
-                
-                <div class="footer-social">
-                    <a href="https://wa.me/5521976011899?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20casa%20em%20Saquarema%20que%20vi%20no%20site.%20Podemos%20conversar%3F" target="_blank" class="social-link whatsapp" aria-label="WhatsApp">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/saquastraub/" target="_blank" class="social-link instagram" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="mailto:saquastraub@gmail.com" class="social-link email" aria-label="E-mail">
-                        <i class="bi bi-envelope"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-divider"></div>
-            
-            <div class="footer-copyright">
-                <p class="mb-0">
-                    <strong>2025 © SaquaStraub</strong> | 
-                    <span data-i18n="copyright">Todos os direitos reservados.</span>
-                </p>
-            </div>
+        <div class="section__header" style="margin-top:1.5rem;margin-bottom:0">
+          <h1 class="section__title" data-i18n="instalacoesTitle">Conheça Nossas Instalações</h1>
+          <p class="section__subtitle" data-i18n="instalacoesSubtitle">Áreas internas e externas pensadas para seu conforto e diversão.</p>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script src="https://unpkg.com/vue-i18n@9/dist/vue-i18n.global.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../js/idioma_instalacoes.js"></script>
-    <script src="../js/formulario.js"></script>
-    <script src="../script.js"></script>
+    <!-- ===== ÁREA EXTERNA ===== -->
+    <section class="section" id="area-externa" data-aos="fade-up">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow" data-i18n="eyebrowDia">Dia</span>
+          <h2 class="section__title" data-i18n="externaTitulo">Área Externa</h2>
+          <p class="section__subtitle" data-i18n="externaTexto">Piscina, churrasqueira, chuveirão e quintal arborizado para momentos inesquecíveis.</p>
+        </div>
+        <div class="gallery-grid gallery-grid--full">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externa/externa01.jpg" alt="Área externa — Vista geral" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externa/externa02.jpg" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/externa/externa03.jpg" alt="Churrasqueira" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/externa/externa04.jpg" alt="Quintal" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="../img/externa/externa05.jpg" alt="Área de lazer" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="../img/externa/externa06.jpg" alt="Totó" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350"><img src="../img/externa/externa07.jpg" alt="Chuveirão externo" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="../img/externa/externa08.jpg" alt="Redes" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450"><img src="../img/externa/externa09.jpg" alt="Vista do quintal" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ÁREA EXTERNA NOITE ===== -->
+    <section class="section section--alt" id="area-externa-noite" data-aos="fade-up">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow" data-i18n="eyebrowNoite">Noite</span>
+          <h2 class="section__title" data-i18n="externaNoiteTitulo">Área Externa — Noite</h2>
+          <p class="section__subtitle" data-i18n="externaNoiteTexto">Iluminação ambiente que cria o cenário perfeito para noites inesquecíveis.</p>
+        </div>
+        <div class="gallery-grid gallery-grid--full">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externaNoite/externaNoite01.jpg" alt="Área noturna" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externaNoite/externaNoite02.jpg" alt="Piscina iluminada" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/externaNoite/externaNoite03.jpg" alt="Churrasqueira noturna" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/externaNoite/externaNoite04.jpg" alt="Quintal noturno" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="../img/externaNoite/externaNoite05.jpg" alt="Lazer noturno" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="../img/externaNoite/externaNoite06.jpg" alt="Ambiente noturno" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350"><img src="../img/externaNoite/externaNoite07.jpg" alt="Iluminação" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="../img/externaNoite/externaNoite08.jpg" alt="Vista noturna" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450"><img src="../img/externaNoite/externaNoite09.jpg" alt="Atmosfera" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TÉRREO ===== -->
+    <section class="section" id="terreo" data-aos="fade-up">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow" data-i18n="eyebrowTerreo">Térreo</span>
+          <h2 class="section__title" data-i18n="terreoTitulo">Área Interna — Térreo</h2>
+          <p class="section__subtitle" data-i18n="terreoTexto">Sala, cozinha equipada, suíte climatizada e banheiro de apoio.</p>
+        </div>
+        <div class="gallery-grid gallery-grid--full">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/internaTerreo/sala00.jpeg" alt="Sala de estar" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/internaTerreo/sala01.jpeg" alt="Sala" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/internaTerreo/sala02.jpeg" alt="Mesa da sala" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/internaTerreo/sala03.jpeg" alt="Ambiente interno" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="../img/internaTerreo/ping01.jpeg" alt="Mesa de ping-pong" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="../img/internaTerreo/cozinha01.jpeg" alt="Cozinha" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350"><img src="../img/internaTerreo/cozinha02.jpeg" alt="Cozinha" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="../img/internaTerreo/cozinha03.jpeg" alt="Bancada" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450"><img src="../img/internaTerreo/cozinha04.jpeg" alt="Cozinha detalhes" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="500"><img src="../img/internaTerreo/banheiro01.jpeg" alt="Banheiro térreo" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="550"><img src="../img/internaTerreo/suite01.jpeg" alt="Suíte térreo" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="600"><img src="../img/internaTerreo/suite02.jpeg" alt="Banheiro suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="650"><img src="../img/internaTerreo/suite03.jpeg" alt="Suíte detalhes" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="700"><img src="../img/internaTerreo/suite04.jpeg" alt="Suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="750"><img src="../img/internaTerreo/suite05.jpeg" alt="Suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="800"><img src="../img/internaTerreo/suite06.jpeg" alt="Suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="850"><img src="../img/internaTerreo/escada.jpg" alt="Escada" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="900"><img src="../img/internaTerreo/escada.jpg" alt="Escada" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="950"><img src="../img/internaTerreo/escada01.jpg" alt="Escada" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEGUNDO ANDAR ===== -->
+    <section class="section section--alt" id="segundo-andar" data-aos="fade-up">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow" data-i18n="eyebrow2Andar">2º Andar</span>
+          <h2 class="section__title" data-i18n="segundoAndarTitulo">Área Interna — Segundo Andar</h2>
+          <p class="section__subtitle" data-i18n="segundoAndarTexto">Varanda, sinuca, banheiro e duas suítes climatizadas.</p>
+        </div>
+        <div class="gallery-grid gallery-grid--full">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/internaSegundoAndar/sinuca.jpg" alt="Mesa de sinuca" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/internaSegundoAndar/banheiro02.jpg" alt="Banheiro 2º andar" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/internaSegundoAndar/suite04.jpg" alt="Suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/internaSegundoAndar/suite05.jpg" alt="Banheiro suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="../img/internaSegundoAndar/suite06.jpg" alt="Segunda suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="../img/internaSegundoAndar/suite07.jpg" alt="Suíte detalhes" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350"><img src="../img/internaSegundoAndar/suite08.jpg" alt="Banheiro" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="../img/internaSegundoAndar/suite09.jpg" alt="Suíte" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450"><img src="../img/internaSegundoAndar/varanda.jpg" alt="Varanda com vista" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESERVATION ===== -->
+    <section class="section" id="reserva" data-aos="fade-up">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow" data-i18n="reservaEyebrow">Garanta sua vaga</span>
+          <h2 class="section__title" data-i18n="facaReserva">Faça sua Reserva</h2>
+          <p class="section__subtitle" data-i18n="reservarTexto">Relaxe, aproveite o sol e garanta sua reserva via WhatsApp.</p>
+        </div>
+        <div class="reservation-wrapper">
+          <div class="reservation-card">
+            <div class="form-field">
+              <label class="form-label" for="checkin" data-i18n="dataEntrada">Data de Entrada</label>
+              <input type="date" id="checkin" class="form-input" autocomplete="off">
+              <p class="form-error" id="erroCheckin" data-i18n="erroCheckin">Selecione uma data de hoje ou superior.</p>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="checkout" data-i18n="dataSaida">Data de Saída</label>
+              <input type="date" id="checkout" class="form-input" autocomplete="off">
+              <p class="form-error" id="erroCheckout" data-i18n="erroCheckout">A data de saída deve ser igual ou posterior à data de entrada.</p>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="pacote" data-i18n="selecionePacote">Selecione a Quantidade de Pessoas</label>
+              <select id="pacote" class="form-input">
+                <option value="" disabled selected data-i18n="escolhaOpcao">Escolha uma opção</option>
+                <option value="1pessoa" data-i18n="pacote1">1 pessoa</option>
+                <option value="2pessoas" data-i18n="pacote2">2 pessoas</option>
+                <option value="3pessoas" data-i18n="pacote3">3 pessoas</option>
+                <option value="4pessoas" data-i18n="pacote4">4 pessoas</option>
+                <option value="5pessoas" data-i18n="pacote5">5 pessoas</option>
+                <option value="6pessoas" data-i18n="pacote6">6 pessoas</option>
+                <option value="7pessoas" data-i18n="pacote7">7 pessoas</option>
+                <option value="8pessoas" data-i18n="pacote8">8 pessoas</option>
+                <option value="9pessoas" data-i18n="pacote9">9 pessoas</option>
+                <option value="10pessoas" data-i18n="pacote10">10 pessoas</option>
+                <option value="11pessoas" data-i18n="pacote11">11 pessoas</option>
+                <option value="12pessoas" data-i18n="pacote12">12 pessoas</option>
+                <option value="13pessoas" data-i18n="pacote13">13 pessoas</option>
+                <option value="14pessoas" data-i18n="pacote14">14 pessoas</option>
+                <option value="15pessoas" data-i18n="pacote15">15 pessoas</option>
+                <option value="16pessoas" data-i18n="pacote16">16 pessoas</option>
+                <option value="17pessoas" data-i18n="pacote17">17 pessoas</option>
+                <option value="18pessoas" data-i18n="pacote18">18 pessoas</option>
+                <option value="19pessoas" data-i18n="pacote19">19 pessoas</option>
+                <option value="20pessoas" data-i18n="pacote20">20 pessoas</option>
+              </select>
+            </div>
+            <button id="btnReservar" class="btn btn--whatsapp btn--full" disabled>
+              <i class="bi bi-whatsapp"></i>
+              <span data-i18n="botaoReservar">Reservar via WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">SaquaStraub</p>
+          <p class="footer__brand-tagline" data-i18n="footerDescription">Sua casa de praia dos sonhos em Saquarema. Momentos inesquecíveis te esperam.</p>
+        </div>
+        <div class="footer__social">
+          <a href="https://wa.me/5521976011899?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20casa%20em%20Saquarema." target="_blank" class="footer__social-link --wa" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.instagram.com/saquastraub/" target="_blank" class="footer__social-link --ig" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="mailto:saquastraub@gmail.com" class="footer__social-link" aria-label="E-mail"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p><strong>2025 © SaquaStraub</strong> &nbsp;·&nbsp; <span data-i18n="copyright">Todos os direitos reservados.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="../js/idioma_instalacoes.js"></script>
+  <script src="../script.js"></script>
+
 </body>
 </html>

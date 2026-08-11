@@ -1,202 +1,232 @@
-const { createApp } = Vue;
-const { createI18n } = VueI18n;
+/* ============================================
+   SaquaStraub — i18n para instalacoes.html
+   Reutiliza a lógica de idiomas.js
+   (mesmas chaves, paths relativos diferentes)
+============================================ */
 
-const messages = {
+const TRANSLATIONS = {
   pt: {
-    instalacoesTitle: "Conheça Nossas Instalações",
-    instalacoesSubtitle: "Descubra todos os ambientes e comodidades que tornam sua estadia inesquecível. Áreas internas e externas pensadas para seu conforto e diversão.",
-    externaTitulo: "Área Externa",
-    externaTexto: "Desfrute de uma ampla e encantadora área externa, perfeita para reunir toda a galera! A casa conta com uma piscina refrescante, um chuveirão ao ar livre para aquele banho pós-praia e uma churrasqueira espaçosa, ideal para celebrar bons momentos.",
-    externaNoiteTitulo: "Área Externa - Noite",
-    externaNoiteTexto: "À noite, a área externa ganha um charme especial com a iluminação ambiente, criando o cenário perfeito para momentos românticos e confraternizações inesquecíveis.",
-    terreoTitulo: "Área Interna - Térreo",
-    terreoTexto: "No térreo você encontra uma sala espaçosa com Wi-Fi e mesa de ping-pong, cozinha equipada com duas geladeiras, uma suíte climatizada e banheiro de apoio.",
-    segundoAndarTitulo: "Área Interna - Segundo Andar",
-    segundoAndarTexto: "No andar superior, você encontra uma varanda com vista para o quintal, sala com poltronas e mesa de sinuca, banheiro e duas suítes climatizadas.",
+    skipToContent: "Pular para o conteúdo",
     inicio: "Início",
+    instalacoes: "Instalações",
     localizacao: "Localização",
     reservarLink: "Reservar",
-    menu: "Menu",
-    copyright: "Todos os direitos reservados.",
+    idiomaLabel: "Idioma",
+    instalacoesTitle: "Conheça Nossas Instalações",
+    instalacoesSubtitle: "Áreas internas e externas pensadas para seu conforto e diversão.",
+    eyebrowDia: "Dia",
+    eyebrowNoite: "Noite",
+    eyebrowTerreo: "Térreo",
+    eyebrow2Andar: "2º Andar",
+    externaTitulo: "Área Externa",
+    externaTexto: "Piscina, churrasqueira, chuveirão e quintal arborizado para momentos inesquecíveis.",
+    externaNoiteTitulo: "Área Externa - Noite",
+    externaNoiteTexto: "Iluminação ambiente que cria o cenário perfeito para noites inesquecíveis.",
+    terreoTitulo: "Área Interna - Térreo",
+    terreoTexto: "Sala, cozinha equipada, suíte climatizada e banheiro de apoio.",
+    segundoAndarTitulo: "Área Interna - Segundo Andar",
+    segundoAndarTexto: "Varanda, sinuca, banheiro e duas suítes climatizadas.",
+    reservaEyebrow: "Garanta sua vaga",
     facaReserva: "Faça sua Reserva",
+    reservarTexto: "Relaxe, aproveite o sol e garanta sua reserva via WhatsApp.",
     dataEntrada: "Data de Entrada",
     dataSaida: "Data de Saída",
-    selecionePacote: "Selecione o Pacote",
+    selecionePacote: "Selecione a Quantidade de Pessoas",
     escolhaOpcao: "Escolha uma opção",
-    pacote10: "Até 10 pessoas",
-    pacote15: "Até 15 pessoas",
-    pacote20: "Até 20 pessoas",
+    pacote1: "1 pessoa",
+    pacote2: "2 pessoas",
+    pacote3: "3 pessoas",
+    pacote4: "4 pessoas",
+    pacote5: "5 pessoas",
+    pacote6: "6 pessoas",
+    pacote7: "7 pessoas",
+    pacote8: "8 pessoas",
+    pacote9: "9 pessoas",
+    pacote10: "10 pessoas",
+    pacote11: "11 pessoas",
+    pacote12: "12 pessoas",
+    pacote13: "13 pessoas",
+    pacote14: "14 pessoas",
+    pacote15: "15 pessoas",
+    pacote16: "16 pessoas",
+    pacote17: "17 pessoas",
+    pacote18: "18 pessoas",
+    pacote19: "19 pessoas",
+    pacote20: "20 pessoas",
     botaoReservar: "Reservar via WhatsApp",
     erroCheckin: "Selecione uma data de hoje ou superior.",
     erroCheckout: "A data de saída deve ser igual ou posterior à data de entrada.",
-    placeholderData: "Selecione uma data",
     footerDescription: "Sua casa de praia dos sonhos em Saquarema. Momentos inesquecíveis te esperam.",
-    meses: [
-    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-    ],
-    diasSemana: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
-    lang: {
-      pt: "Português",
-      en: "English",
-      es: "Español",
-    }
+    copyright: "Todos os direitos reservados.",
   },
   en: {
-    instalacoesTitle: "Discover Our Facilities",
-    instalacoesSubtitle: "Explore all the spaces and amenities that make your stay unforgettable. Indoor and outdoor areas designed for your comfort and fun.",
-    externaTitulo: "Outdoor Area",
-    externaTexto: "Enjoy a large and charming outdoor area, perfect for gathering all your friends! The house features a refreshing pool, an outdoor shower for that post-beach rinse, and a spacious barbecue grill, ideal for celebrating good moments.",
-    externaNoiteTitulo: "Outdoor Area - Night",
-    externaNoiteTexto: "At night, the outdoor area gains special charm with ambient lighting, creating the perfect setting for romantic moments and unforgettable gatherings.",
-    terreoTitulo: "Indoor Area - Ground Floor",
-    terreoTexto: "On the ground floor you'll find a spacious room with Wi-Fi and ping-pong table, kitchen equipped with two refrigerators, an air-conditioned suite and support bathroom.",
-    segundoAndarTitulo: "Indoor Area - Second Floor",
-    segundoAndarTexto: "On the upper floor, you'll find a balcony overlooking the yard, room with armchairs and pool table, bathroom and two air-conditioned suites.",
+    skipToContent: "Skip to content",
     inicio: "Home",
+    instalacoes: "Facilities",
     localizacao: "Location",
     reservarLink: "Book",
-    menu: "Menu",
-    copyright: "All rights reserved.",
+    idiomaLabel: "Language",
+    instalacoesTitle: "Discover Our Facilities",
+    instalacoesSubtitle: "Indoor and outdoor areas designed for your comfort and fun.",
+    eyebrowDia: "Daytime",
+    eyebrowNoite: "Night",
+    eyebrowTerreo: "Ground Floor",
+    eyebrow2Andar: "2nd Floor",
+    externaTitulo: "Outdoor Area",
+    externaTexto: "Pool, barbecue, outdoor shower and landscaped yard for unforgettable moments.",
+    externaNoiteTitulo: "Outdoor Area - Night",
+    externaNoiteTexto: "Ambient lighting creates the perfect setting for unforgettable nights.",
+    terreoTitulo: "Indoor Area - Ground Floor",
+    terreoTexto: "Lounge, equipped kitchen, air-conditioned suite and support bathroom.",
+    segundoAndarTitulo: "Indoor Area - Second Floor",
+    segundoAndarTexto: "Balcony, pool table, bathroom and two air-conditioned suites.",
+    reservaEyebrow: "Secure your spot",
     facaReserva: "Make Your Reservation",
+    reservarTexto: "Relax, enjoy the sun and book your stay via WhatsApp.",
     dataEntrada: "Check-in Date",
     dataSaida: "Check-out Date",
-    selecionePacote: "Select Package",
+    selecionePacote: "Select Number of Guests",
     escolhaOpcao: "Choose an option",
-    pacote10: "Up to 10 people",
-    pacote15: "Up to 15 people",
-    pacote20: "Up to 20 people",
-    botaoReservar: "Reserve via WhatsApp",
+    pacote1: "1 guest",
+    pacote2: "2 guests",
+    pacote3: "3 guests",
+    pacote4: "4 guests",
+    pacote5: "5 guests",
+    pacote6: "6 guests",
+    pacote7: "7 guests",
+    pacote8: "8 guests",
+    pacote9: "9 guests",
+    pacote10: "10 guests",
+    pacote11: "11 guests",
+    pacote12: "12 guests",
+    pacote13: "13 guests",
+    pacote14: "14 guests",
+    pacote15: "15 guests",
+    pacote16: "16 guests",
+    pacote17: "17 guests",
+    pacote18: "18 guests",
+    pacote19: "19 guests",
+    pacote20: "20 guests",
+    botaoReservar: "Book via WhatsApp",
     erroCheckin: "Please select today's date or later.",
-    erroCheckout: "Check-out date must be the same or later than check-in date.",
-    placeholderData: "Select a date",
-    footerDescription: "Your dream beach house in Saquarema. Unforgettable moments await you.",
-    meses: [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-    ],
-    diasSemana: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    lang: {
-      pt: "Portuguese",
-      en: "English",
-      es: "Spanish"
-    }
+    erroCheckout: "Check-out must be the same or after check-in.",
+    footerDescription: "Your dream beach house in Saquarema. Unforgettable moments await.",
+    copyright: "All rights reserved.",
   },
   es: {
-    instalacoesTitle: "Conoce Nuestras Instalaciones",
-    instalacoesSubtitle: "Descubre todos los espacios y comodidades que hacen tu estadía inolvidable. Áreas internas y externas pensadas para tu comodidad y diversión.",
-    externaTitulo: "Área Exterior",
-    externaTexto: "Disfruta de una amplia y encantadora área exterior, perfecta para reunir a todos los amigos! La casa cuenta con una piscina refrescante, una ducha al aire libre para ese baño después de la playa y una espaciosa parrilla, ideal para celebrar buenos momentos.",
-    externaNoiteTitulo: "Área Exterior - Noche",
-    externaNoiteTexto: "Por la noche, el área exterior gana un encanto especial con la iluminación ambiental, creando el escenario perfecto para momentos románticos y confraternizaciones inolvidables.",
-    terreoTitulo: "Área Interna - Planta Baja",
-    terreoTexto: "En la planta baja encuentras una sala espaciosa con Wi-Fi y mesa de ping-pong, cocina equipada con dos refrigeradores, una suite climatizada y baño de apoyo.",
-    segundoAndarTitulo: "Área Interna - Segundo Piso",
-    segundoAndarTexto: "En el piso superior, encuentras un balcón con vista al patio, sala con sillones y mesa de billar, baño y dos suites climatizadas.",
+    skipToContent: "Saltar al contenido",
     inicio: "Inicio",
+    instalacoes: "Instalaciones",
     localizacao: "Ubicación",
     reservarLink: "Reservar",
-    menu: "Menú",
-    copyright: "Todos los derechos reservados.",
+    idiomaLabel: "Idioma",
+    instalacoesTitle: "Conoce Nuestras Instalaciones",
+    instalacoesSubtitle: "Áreas internas y externas pensadas para tu comodidad y diversión.",
+    eyebrowDia: "Día",
+    eyebrowNoite: "Noche",
+    eyebrowTerreo: "Planta Baja",
+    eyebrow2Andar: "2º Piso",
+    externaTitulo: "Área Exterior",
+    externaTexto: "Piscina, parrilla, ducha y patio arbolado para momentos inolvidables.",
+    externaNoiteTitulo: "Área Exterior - Noche",
+    externaNoiteTexto: "Iluminación ambiental que crea el escenario perfecto para noches inolvidables.",
+    terreoTitulo: "Área Interna - Planta Baja",
+    terreoTexto: "Sala, cocina equipada, suite climatizada y baño de apoyo.",
+    segundoAndarTitulo: "Área Interna - Segundo Piso",
+    segundoAndarTexto: "Balcón, mesa de billar, baño y dos suites climatizadas.",
+    reservaEyebrow: "Asegura tu lugar",
     facaReserva: "Haz tu Reserva",
+    reservarTexto: "Relájate, disfruta el sol y reserva tu estadía por WhatsApp.",
     dataEntrada: "Fecha de Entrada",
     dataSaida: "Fecha de Salida",
-    selecionePacote: "Seleccione el Paquete",
+    selecionePacote: "Seleccione la Cantidad de Personas",
     escolhaOpcao: "Elija una opción",
-    pacote10: "Hasta 10 personas",
-    pacote15: "Hasta 15 personas",
-    pacote20: "Hasta 20 personas",
+    pacote1: "1 persona",
+    pacote2: "2 personas",
+    pacote3: "3 personas",
+    pacote4: "4 personas",
+    pacote5: "5 personas",
+    pacote6: "6 personas",
+    pacote7: "7 personas",
+    pacote8: "8 personas",
+    pacote9: "9 personas",
+    pacote10: "10 personas",
+    pacote11: "11 personas",
+    pacote12: "12 personas",
+    pacote13: "13 personas",
+    pacote14: "14 personas",
+    pacote15: "15 personas",
+    pacote16: "16 personas",
+    pacote17: "17 personas",
+    pacote18: "18 personas",
+    pacote19: "19 personas",
+    pacote20: "20 personas",
     botaoReservar: "Reservar por WhatsApp",
     erroCheckin: "Seleccione una fecha de hoy o posterior.",
-    erroCheckout: "La fecha de salida debe ser igual o posterior a la fecha de entrada.",
-    placeholderData: "Seleccione una fecha",
+    erroCheckout: "La fecha de salida debe ser igual o posterior a la entrada.",
     footerDescription: "Tu casa de playa de ensueño en Saquarema. Te esperan momentos inolvidables.",
-    meses: [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-    ],
-    diasSemana: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
-    lang: {
-      pt: "Portugués",
-      en: "Inglés",
-      es: "Español"
-    }
+    copyright: "Todos los derechos reservados.",
   }
 };
 
-const i18n = createI18n({
-  legacy: false,
-  locale: localStorage.getItem("lang") || "pt",
-  fallbackLocale: "pt",
-  messages
-});
+const FLAGS = { pt: 'br.webp', en: 'us.webp', es: 'es.webp' };
+const LANG_LABEL = { pt: 'PT', en: 'EN', es: 'ES' };
 
-const sharedData = () => ({
-  currentLang: i18n.global.locale.value,
-  flags: {
-    pt: 'br.webp',
-    en: 'us.webp',
-    es: 'es.webp'
-  }
-});
+let currentLang = localStorage.getItem('lang') || 'pt';
+const basePath = '../';
 
-const sharedMethods = {
-  changeLanguage() {
-    i18n.global.locale.value = this.currentLang;
-    localStorage.setItem("lang", this.currentLang);
-    this.updateTexts();
-  },
-  updateTexts() {
-    const t = i18n.global.t;
+function applyLang(lang) {
+  if (!TRANSLATIONS[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
 
-    // Atualiza elementos com texto puro
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (key) {
-        el.textContent = t(key);
-      }
-    });
+  const t = TRANSLATIONS[lang];
 
-    // Atualiza elementos com conteúdo HTML
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {
-      const key = el.getAttribute('data-i18n-html');
-      if (key) {
-        el.innerHTML = t(key);
-      }
-    });
-
-    // Atualiza nomes dos idiomas nos selects
-    const selects = document.querySelectorAll('select[aria-label="Seleção de idioma"]');
-    selects.forEach(select => {
-      select.querySelectorAll("option").forEach(option => {
-        const key = option.value;
-        if (t(`lang.${key}`)) option.textContent = t(`lang.${key}`);
-      });
-    });
-
-    // Atualiza textos por id específicos, se existirem
-    const menuEl = document.getElementById("offcanvasNavbarLabel");
-    if (menuEl) menuEl.textContent = t("menu");
-  }
-};
-
-function createLanguageApp(selector) {
-  const app = createApp({
-    data: sharedData,
-    methods: sharedMethods,
-    mounted() {
-      this.updateTexts();
-    },
-    watch: {
-      currentLang() {
-        this.changeLanguage();
-      }
-    }
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
   });
 
-  app.use(i18n);
-  app.mount(selector);
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  const flag  = document.getElementById('lang-flag');
+  const label = document.getElementById('lang-label');
+  if (flag)  flag.src = basePath + 'img/bandeiras/' + FLAGS[lang];
+  if (label) label.textContent = LANG_LABEL[lang];
+
+  document.querySelectorAll('.lang-picker__option').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === lang);
+  });
+  document.querySelectorAll('.navbar__mobile-lang-options button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
 }
 
-createLanguageApp("#language-app");
-createLanguageApp("#language-app-mobile");
+/* Desktop picker */
+const picker    = document.getElementById('lang-picker');
+const pickerBtn = document.getElementById('lang-btn');
+
+if (picker && pickerBtn) {
+  pickerBtn.addEventListener('click', () => {
+    const open = picker.classList.toggle('open');
+    pickerBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', e => {
+    if (!picker.contains(e.target)) { picker.classList.remove('open'); pickerBtn.setAttribute('aria-expanded', 'false'); }
+  });
+  document.querySelectorAll('.lang-picker__option').forEach(opt => {
+    opt.addEventListener('click', () => { applyLang(opt.dataset.lang); picker.classList.remove('open'); });
+    opt.addEventListener('keydown', e => { if (e.key === 'Enter') { applyLang(opt.dataset.lang); picker.classList.remove('open'); } });
+  });
+}
+
+/* Mobile lang */
+document.querySelectorAll('.navbar__mobile-lang-options button').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+applyLang(currentLang);
