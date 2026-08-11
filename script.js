@@ -41,7 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (burger && drawer) {
-    burger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+    burger.addEventListener('click', () => {
+      if (drawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
     if (mobileClose) mobileClose.addEventListener('click', closeDrawer);
     if (backdrop)    backdrop.addEventListener('click', closeDrawer);
 

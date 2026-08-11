@@ -367,14 +367,15 @@ button { cursor: pointer; font-family: inherit; }
 .navbar__mobile {
   position: fixed;
   inset: 0;
-  z-index: 800;
+  z-index: 1000;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .navbar__mobile-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,.5);
   opacity: 0;
   transition: opacity .3s;
 }
@@ -392,9 +393,13 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  z-index: 1001;
 }
 
-.navbar__mobile.open { pointer-events: all; }
+.navbar__mobile.open {
+  pointer-events: all;
+  visibility: visible;
+}
 .navbar__mobile.open .navbar__mobile-backdrop { opacity: 1; }
 .navbar__mobile.open .navbar__mobile-panel { transform: translateX(0); }
 
@@ -405,7 +410,7 @@ button { cursor: pointer; font-family: inherit; }
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--gray-100);
 }
-.navbar__mobile-header img { height: 40px; width: auto; }
+.navbar__mobile-header img { height: 64px; width: auto; }
 
 .navbar__mobile-close {
   width: 36px;
@@ -487,7 +492,7 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 @media (min-width: 841px) {
-  .navbar__mobile { display: none; }
+  .navbar__mobile { display: none !important; }
 }
 
 /* ===== HERO ===== */
