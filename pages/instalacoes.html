@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google Analytics -->
+  <!-- Google Analytics (non-blocking) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B13CP5JBL4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,16 +14,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Veja as instalações da casa SaquaStraub em Saquarema: piscina, churrasqueira, 3 suítes climatizadas e áreas de lazer completas.">
   <meta property="og:title" content="Instalações — SaquaStraub, Casa de Praia em Saquarema RJ">
-  <meta property="og:image" content="https://www.saquastraub.com.br/img/externa/externa01.jpg">
+  <meta property="og:image" content="https://www.saquastraub.com.br/img/externa/01.webp">
   <link rel="canonical" href="https://www.saquastraub.com.br/pages/instalacoes.html">
   <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
   <title>Instalações — Casa de Praia em Saquarema | SaquaStraub</title>
 
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- Preload: logo e primeira imagem da galeria (LCP) -->
+  <link rel="preload" as="image" href="../img/logo.png">
+  <link rel="preload" as="image" href="../img/externa/01.webp" fetchpriority="high">
+
+  <!-- Fonts: non-blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Bootstrap Icons: non-blocking -->
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"></noscript>
+
+  <!-- AOS: non-blocking -->
+  <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.4/dist/aos.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"></noscript>
+
+  <!-- CSS crítico inline -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    .navbar{position:fixed;inset-block-start:0;inset-inline:0;z-index:900;background:rgba(255,255,255,.88);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(0,0,0,.06)}
+    .navbar__inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem);gap:1rem}
+    .navbar__logo img{height:72px;width:auto;display:block}
+    .page-header{padding:5.5rem 0 3rem;background:#f9fafb;border-bottom:1px solid #f3f4f6}
+    .skip-link{position:absolute;top:-100%;left:1rem;padding:.5rem 1rem;background:#0ea5e9;color:#fff;border-radius:8px;font-weight:600;z-index:9999}
+    .skip-link:focus{top:1rem}
+  </style>
+
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -124,16 +154,43 @@
           <h2 class="section__title" data-i18n="externaTitulo">Área Externa</h2>
           <p class="section__subtitle" data-i18n="externaTexto">Piscina, churrasqueira, chuveirão e quintal arborizado para momentos inesquecíveis.</p>
         </div>
+
+        <!-- Casa (01–04) -->
+        <h3 class="gallery-section-label" data-i18n="galeriaCasa">A Casa</h3>
+        <div class="gallery-grid gallery-grid--full" style="margin-bottom:2rem">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externa/01.webp" alt="Casa" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externa/02.webp" alt="Casa" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/externa/03.webp" alt="Casa" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/externa/04.webp" alt="Casa" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+
+        <!-- Quintal / Piscina (05–13) -->
+        <h3 class="gallery-section-label" data-i18n="galeriaQuintal">Quintal e Piscina</h3>
+        <div class="gallery-grid gallery-grid--full" style="margin-bottom:2rem">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externa/05.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externa/06.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/externa/07.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/externa/08.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="../img/externa/09.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="../img/externa/10.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350"><img src="../img/externa/11.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="../img/externa/12.webp" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450"><img src="../img/externa/13.webp" alt="Piscina" style="object-position:center 80%" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+
+        <!-- Churrasqueira (14–16) -->
+        <h3 class="gallery-section-label" data-i18n="galeriaChurras">Churrasqueira</h3>
+        <div class="gallery-grid gallery-grid--full" style="margin-bottom:2rem">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externa/14.webp" alt="Churrasqueira" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externa/15.webp" alt="Churrasqueira" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/externa/16.webp" alt="Churrasqueira" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+        </div>
+
+        <!-- Totó e Redes (17–18) -->
+        <h3 class="gallery-section-label" data-i18n="galeriaLazer">Lazer</h3>
         <div class="gallery-grid gallery-grid--full">
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externa/externa01.jpg" alt="Área externa — Vista geral" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externa/externa02.jpg" alt="Piscina" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="../img/externa/externa03.jpg" alt="Churrasqueira" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="../img/externa/externa04.jpg" alt="Quintal" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="../img/externa/externa05.jpg" alt="Área de lazer" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="../img/externa/externa06.jpg" alt="Totó" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350"><img src="../img/externa/externa07.jpg" alt="Chuveirão externo" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="../img/externa/externa08.jpg" alt="Redes" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
-          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450"><img src="../img/externa/externa09.jpg" alt="Vista do quintal" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="../img/externa/17.jpg" alt="Totó" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="../img/externa/18.jpg" alt="Redes" loading="lazy" decoding="async"><div class="gallery-overlay" aria-hidden="true"><i class="bi bi-zoom-in"></i></div></div>
         </div>
       </div>
     </section>
@@ -291,9 +348,9 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="../js/idioma_instalacoes.js"></script>
-  <script src="../script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="../js/idioma_instalacoes.js" defer></script>
+  <script src="../script.js" defer></script>
 
 </body>
 </html>
