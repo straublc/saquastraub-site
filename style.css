@@ -607,46 +607,71 @@ button { cursor: pointer; font-family: inherit; }
 /* ===== STATS BAR ===== */
 .stats-bar {
   background: var(--white);
-  border-bottom: 1px solid var(--gray-100);
-  padding: 1.5rem 0;
+  padding: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  position: relative;
+  z-index: 2;
 }
 
 .stats-bar__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  text-align: center;
-  divide-x: 1px solid var(--gray-200);
 }
 
 .stats-bar__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .2rem;
-  padding: .5rem;
+  gap: .35rem;
+  padding: 1.75rem 1rem;
+  text-align: center;
   border-right: 1px solid var(--gray-100);
+  transition: background .2s;
 }
 .stats-bar__item:last-child { border-right: none; }
+.stats-bar__item:hover { background: var(--brand-50); }
+
+.stats-bar__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  background: var(--brand-50);
+  color: var(--brand-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: .2rem;
+  transition: background .2s;
+}
+.stats-bar__item:hover .stats-bar__icon {
+  background: var(--brand-100, #bae6fd);
+}
 
 .stats-bar__value {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: var(--brand-500);
+  color: var(--gray-900);
   line-height: 1;
+  letter-spacing: -.02em;
 }
+
 .stats-bar__label {
-  font-size: .75rem;
-  font-weight: 500;
-  color: var(--gray-500);
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--gray-400);
   text-transform: uppercase;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
 }
 
 @media (max-width: 600px) {
   .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-bar__item { padding: 1.25rem .75rem; }
   .stats-bar__item:nth-child(2) { border-right: none; }
+  .stats-bar__item:nth-child(1),
+  .stats-bar__item:nth-child(2) { border-bottom: 1px solid var(--gray-100); }
+  .stats-bar__value { font-size: 1.4rem; }
 }
 
 /* ===== GALLERY ===== */
