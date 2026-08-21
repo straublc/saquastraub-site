@@ -9,8 +9,8 @@
  * - endDate: null → evento continua aparecendo até ser atualizado manualmente
  *
  * Imagens disponíveis em public/img/eventos/:
- *   ogosto.png, surf-img-1.jpg, saqua-img-1.jpg, rema-wsl.png,
- *   saqua-img-2.jpg, beer-fest.png, placeholder.svg
+ *   ogosto.webp, surf-img-1.webp, saqua-img-1.webp, rema-wsl.webp,
+ *   saqua-img-2.webp, beer-fest.webp, placeholder.svg
  */
 
 export const events = [
@@ -34,7 +34,7 @@ export const events = [
 É uma oportunidade para quem visita Saquarema aproveitar a cidade também pela sua gastronomia e conhecer diferentes estabelecimentos participantes.
 
 Os valores podem variar conforme o estabelecimento participante.`,
-    coverImage: '/img/eventos/ogosto.png',
+    coverImage: '/img/eventos/ogosto.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -59,7 +59,7 @@ Os valores podem variar conforme o estabelecimento participante.`,
 A competição reúne atletas de diferentes países e acontece nas ondas da Praia de Itaúna, um dos principais cenários do surf brasileiro.
 
 O evento reforça a posição de Saquarema como um dos principais destinos mundiais para o surf e para os esportes ligados ao mar.`,
-    coverImage: '/img/eventos/kneeboard.png',
+    coverImage: '/img/eventos/kneeboard.webp',
     gallery:    [],
     officialUrl: 'https://kneeboardsurfingworldtitles.com/',
     published: true
@@ -88,7 +88,7 @@ O dia 8 de setembro, dedicado à Nossa Senhora de Nazareth, é o ponto alto da c
 Para quem visita Saquarema nesse período, o Círio também é uma oportunidade de conhecer uma das tradições mais marcantes da cidade.
 
 As celebrações públicas e religiosas são de acesso aberto à comunidade.`,
-    coverImage: '/img/eventos/cirio.png',
+    coverImage: '/img/eventos/cirio.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -113,7 +113,7 @@ As celebrações públicas e religiosas são de acesso aberto à comunidade.`,
 Realizado na Praia de Itaúna, o festival reúne competições de surf e atividades relacionadas à cultura e ao estilo de vida do esporte.
 
 O evento reforça a posição de Saquarema como um dos principais destinos brasileiros para o surf e atrai atletas, familiares, torcedores e visitantes interessados em acompanhar as competições.`,
-    coverImage: '/img/eventos/rema-wsl.png',
+    coverImage: '/img/eventos/rema-wsl.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -136,7 +136,7 @@ O evento reforça a posição de Saquarema como um dos principais destinos brasi
     description: `O Saquarema Gospel reúne música, fé e cultura em uma programação que recebe artistas e apresentações de música gospel.
 
 O evento faz parte do calendário cultural da cidade e reúne moradores, visitantes e famílias em momentos de música e celebração.`,
-    coverImage: '/img/eventos/saqua-gospel.png',
+    coverImage: '/img/eventos/saqua-gospel.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -161,7 +161,7 @@ O evento faz parte do calendário cultural da cidade e reúne moradores, visitan
 O festival faz parte do calendário turístico de Saquarema e reúne cervejarias, gastronomia, atrações musicais e público de diferentes cidades da Região dos Lagos.
 
 É uma opção interessante para quem quer conhecer Saquarema fora da alta temporada e aproveitar uma programação gastronômica e musical durante o fim de semana.`,
-    coverImage: '/img/eventos/beer-fest.png',
+    coverImage: '/img/eventos/beer-fest.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -184,7 +184,7 @@ O festival faz parte do calendário turístico de Saquarema e reúne cervejarias
     description: `A Tríplice Coroa Saquarema é um circuito tradicional do surf local, reunindo atletas de diferentes categorias e valorizando a formação e o desenvolvimento do esporte na cidade.
 
 As competições fazem parte do calendário esportivo de Saquarema e ajudam a movimentar as praias e o cenário local do surf.`,
-    coverImage: '/img/eventos/surf-img-1.jpg',
+    coverImage: '/img/eventos/surf-img-1.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -209,7 +209,7 @@ As competições fazem parte do calendário esportivo de Saquarema e ajudam a mo
 Durante os dias de programação, o público encontra atividades literárias, apresentações culturais, música, encontros e ações voltadas para diferentes públicos.
 
 O evento se tornou um dos principais acontecimentos culturais de Saquarema e atrai visitantes interessados em literatura e programação cultural.`,
-    coverImage: '/img/eventos/flis.png',
+    coverImage: '/img/eventos/flis.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -234,7 +234,7 @@ O evento se tornou um dos principais acontecimentos culturais de Saquarema e atr
 A iniciativa se tornou uma das principais atrações do calendário turístico de Saquarema e contribui para movimentar a cidade durante o período de Natal.
 
 É uma opção especialmente interessante para famílias e visitantes que desejam conhecer Saquarema durante o fim do ano.`,
-    coverImage: '/img/eventos/natal.png',
+    coverImage: '/img/eventos/natal.webp',
     gallery:    [],
     officialUrl: null,
     published: true
@@ -259,7 +259,7 @@ A iniciativa se tornou uma das principais atrações do calendário turístico d
 A programação tradicionalmente reúne shows e atrações em diferentes pontos do município, além da celebração da virada do ano.
 
 A cidade recebe moradores e turistas para celebrar a chegada do novo ano, tornando o período uma das épocas mais movimentadas do calendário turístico local.`,
-    coverImage: '/img/eventos/revellion.png',
+    coverImage: '/img/eventos/revellion.webp',
     gallery:    [],
     officialUrl: null,
     published: true

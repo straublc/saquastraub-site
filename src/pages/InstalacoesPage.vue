@@ -157,8 +157,8 @@ const galChurras = [
   { src: '/img/externa/16.webp', alt: 'Churrasqueira' }
 ]
 const galLazer = [
-  { src: '/img/externa/17.jpg', alt: 'Totó' },
-  { src: '/img/externa/18.jpg', alt: 'Redes' }
+  { src: '/img/externa/17.webp', alt: 'Totó' },
+  { src: '/img/externa/18.webp', alt: 'Redes' }
 ]
 
 const allExternal = [...galCasa, ...galQuintal, ...galChurras, ...galLazer]
@@ -168,48 +168,48 @@ const extChurrasOffset = galCasa.length + galQuintal.length
 const extLazerOffset   = galCasa.length + galQuintal.length + galChurras.length
 
 const galNoite = [
-  { src: '/img/externaNoite/externaNoite01.jpg', alt: 'Área noturna' },
-  { src: '/img/externaNoite/externaNoite02.jpg', alt: 'Piscina iluminada' },
-  { src: '/img/externaNoite/externaNoite03.jpg', alt: 'Churrasqueira noturna' },
-  { src: '/img/externaNoite/externaNoite04.jpg', alt: 'Quintal noturno' },
-  { src: '/img/externaNoite/externaNoite05.jpg', alt: 'Lazer noturno' },
-  { src: '/img/externaNoite/externaNoite06.jpg', alt: 'Ambiente noturno' },
-  { src: '/img/externaNoite/externaNoite07.jpg', alt: 'Iluminação' },
-  { src: '/img/externaNoite/externaNoite08.jpg', alt: 'Vista noturna' },
-  { src: '/img/externaNoite/externaNoite09.jpg', alt: 'Atmosfera' }
+  { src: '/img/externaNoite/externaNoite01.webp', alt: 'Área noturna' },
+  { src: '/img/externaNoite/externaNoite02.webp', alt: 'Piscina iluminada' },
+  { src: '/img/externaNoite/externaNoite03.webp', alt: 'Churrasqueira noturna' },
+  { src: '/img/externaNoite/externaNoite04.webp', alt: 'Quintal noturno' },
+  { src: '/img/externaNoite/externaNoite05.webp', alt: 'Lazer noturno' },
+  { src: '/img/externaNoite/externaNoite06.webp', alt: 'Ambiente noturno' },
+  { src: '/img/externaNoite/externaNoite07.webp', alt: 'Iluminação' },
+  { src: '/img/externaNoite/externaNoite08.webp', alt: 'Vista noturna' },
+  { src: '/img/externaNoite/externaNoite09.webp', alt: 'Atmosfera' }
 ]
 
 const galTerreo = [
-  { src: '/img/internaTerreo/sala00.jpeg', alt: 'Sala de estar' },
-  { src: '/img/internaTerreo/sala01.jpeg', alt: 'Sala' },
-  { src: '/img/internaTerreo/sala02.jpeg', alt: 'Mesa da sala' },
-  { src: '/img/internaTerreo/sala03.jpeg', alt: 'Ambiente interno' },
-  { src: '/img/internaTerreo/ping01.jpeg', alt: 'Mesa de ping-pong' },
-  { src: '/img/internaTerreo/cozinha01.jpeg', alt: 'Cozinha' },
-  { src: '/img/internaTerreo/cozinha02.jpeg', alt: 'Cozinha' },
-  { src: '/img/internaTerreo/cozinha03.jpeg', alt: 'Bancada' },
-  { src: '/img/internaTerreo/cozinha04.jpeg', alt: 'Cozinha detalhes' },
-  { src: '/img/internaTerreo/banheiro01.jpeg', alt: 'Banheiro térreo' },
-  { src: '/img/internaTerreo/suite01.jpeg', alt: 'Suíte térreo' },
-  { src: '/img/internaTerreo/suite02.jpeg', alt: 'Banheiro suíte' },
-  { src: '/img/internaTerreo/suite03.jpeg', alt: 'Suíte detalhes' },
-  { src: '/img/internaTerreo/suite04.jpeg', alt: 'Suíte' },
-  { src: '/img/internaTerreo/suite05.jpeg', alt: 'Suíte' },
-  { src: '/img/internaTerreo/suite06.jpeg', alt: 'Suíte' },
-  { src: '/img/internaTerreo/escada.jpg', alt: 'Escada' },
-  { src: '/img/internaTerreo/escada01.jpg', alt: 'Escada' }
+  { src: '/img/internaTerreo/sala00.webp', alt: 'Sala de estar' },
+  { src: '/img/internaTerreo/sala01.webp', alt: 'Sala' },
+  { src: '/img/internaTerreo/sala02.webp', alt: 'Mesa da sala' },
+  { src: '/img/internaTerreo/sala03.webp', alt: 'Ambiente interno' },
+  { src: '/img/internaTerreo/ping01.webp', alt: 'Mesa de ping-pong' },
+  { src: '/img/internaTerreo/cozinha01.webp', alt: 'Cozinha' },
+  { src: '/img/internaTerreo/cozinha02.webp', alt: 'Cozinha' },
+  { src: '/img/internaTerreo/cozinha03.webp', alt: 'Bancada' },
+  { src: '/img/internaTerreo/cozinha04.webp', alt: 'Cozinha detalhes' },
+  { src: '/img/internaTerreo/banheiro01.webp', alt: 'Banheiro térreo' },
+  { src: '/img/internaTerreo/suite01.webp', alt: 'Suíte térreo' },
+  { src: '/img/internaTerreo/suite02.webp', alt: 'Banheiro suíte' },
+  { src: '/img/internaTerreo/suite03.webp', alt: 'Suíte detalhes' },
+  { src: '/img/internaTerreo/suite04.webp', alt: 'Suíte' },
+  { src: '/img/internaTerreo/suite05.webp', alt: 'Suíte' },
+  { src: '/img/internaTerreo/suite06.webp', alt: 'Suíte' },
+  { src: '/img/internaTerreo/escada.webp', alt: 'Escada' },
+  { src: '/img/internaTerreo/escada01.webp', alt: 'Escada' }
 ]
 
 const galSegundoAndar = [
-  { src: '/img/internaSegundoAndar/sinuca.jpg', alt: 'Mesa de sinuca' },
-  { src: '/img/internaSegundoAndar/banheiro02.jpg', alt: 'Banheiro 2º andar' },
-  { src: '/img/internaSegundoAndar/suite04.jpg', alt: 'Suíte' },
-  { src: '/img/internaSegundoAndar/suite05.jpg', alt: 'Banheiro suíte' },
-  { src: '/img/internaSegundoAndar/suite06.jpg', alt: 'Segunda suíte' },
-  { src: '/img/internaSegundoAndar/suite07.jpg', alt: 'Suíte detalhes' },
-  { src: '/img/internaSegundoAndar/suite08.jpg', alt: 'Banheiro' },
-  { src: '/img/internaSegundoAndar/suite09.jpg', alt: 'Suíte' },
-  { src: '/img/internaSegundoAndar/varanda.jpg', alt: 'Varanda com vista' }
+  { src: '/img/internaSegundoAndar/sinuca.webp', alt: 'Mesa de sinuca' },
+  { src: '/img/internaSegundoAndar/banheiro02.webp', alt: 'Banheiro 2º andar' },
+  { src: '/img/internaSegundoAndar/suite04.webp', alt: 'Suíte' },
+  { src: '/img/internaSegundoAndar/suite05.webp', alt: 'Banheiro suíte' },
+  { src: '/img/internaSegundoAndar/suite06.webp', alt: 'Segunda suíte' },
+  { src: '/img/internaSegundoAndar/suite07.webp', alt: 'Suíte detalhes' },
+  { src: '/img/internaSegundoAndar/suite08.webp', alt: 'Banheiro' },
+  { src: '/img/internaSegundoAndar/suite09.webp', alt: 'Suíte' },
+  { src: '/img/internaSegundoAndar/varanda.webp', alt: 'Varanda com vista' }
 ]
 
 // Lightbox

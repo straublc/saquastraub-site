@@ -311,7 +311,7 @@ const homeGallery = [
   { src: '/img/externa/05.webp', alt: 'Piscina' },
   { src: '/img/externa/06.webp', alt: 'Piscina' },
   { src: '/img/externa/14.webp', alt: 'Churrasqueira' },
-  { src: '/img/externa/17.jpg',  alt: 'Totó' }
+  { src: '/img/externa/17.webp',  alt: 'Totó' }
 ]
 
 const lightboxOpen = ref(false)

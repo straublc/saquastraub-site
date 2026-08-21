@@ -3,7 +3,7 @@
     <div class="navbar__inner">
       <!-- Logo -->
       <RouterLink to="/" class="navbar__logo" :aria-label="t('inicio') + ' — SaquaStraub'">
-        <img src="/img/logo.png" alt="SaquaStraub" width="120" height="48">
+        <img src="/img/logo.webp" alt="SaquaStraub" width="120" height="48">
       </RouterLink>
 
       <!-- Desktop Nav -->
@@ -73,7 +73,7 @@
     <div class="navbar__mobile-backdrop" @click="closeDrawer"></div>
     <div class="navbar__mobile-panel" role="dialog" aria-label="Menu de navegação">
       <div class="navbar__mobile-header">
-        <img src="/img/logo.png" alt="SaquaStraub" height="64">
+        <img src="/img/logo.webp" alt="SaquaStraub" height="64">
         <button class="navbar__mobile-close" @click="closeDrawer" aria-label="Fechar menu">
           <i class="bi bi-x-lg"></i>
         </button>
