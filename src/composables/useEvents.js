@@ -1,6 +1,23 @@
 import { computed, ref } from 'vue'
 import { events } from '../data/events.js'
 
+// ── Localization helper ───────────────────────────────────────────────────────
+export function localizeEvent(event, locale) {
+  const l = locale || 'pt'
+  const pick = (field) => (typeof field === 'object' && field !== null) ? (field[l] || field.pt || '') : (field || '')
+  return {
+    ...event,
+    title: pick(event.title),
+    shortDescription: pick(event.shortDescription),
+    description: pick(event.description),
+    location: {
+      ...event.location,
+      name: pick(event.location?.name),
+    }
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 // ── Shared state (singleton) ─────────────────────────────────────────────────
 // Defined outside the function so every call to useEvents() reads/writes the
 // same refs — filters set in EventFilters are immediately visible in EventosPage.

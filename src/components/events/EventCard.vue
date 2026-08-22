@@ -6,10 +6,10 @@
     @keydown.enter="navigateToEvent"
     tabindex="0"
     role="button"
-    :aria-label="happening ? `${event.title} — ${t('acontecendoAgora')}` : event.title"
+    :aria-label="happening ? `${localizedEvent.title} — ${t('acontecendoAgora')}` : localizedEvent.title"
   >
     <div class="event-card__image">
-      <img :src="event.coverImage" :alt="event.title" loading="lazy">
+      <img :src="event.coverImage" :alt="localizedEvent.title" loading="lazy">
 
       <!-- Gradient overlay only when live -->
       <div v-if="happening" class="event-card__live-overlay"></div>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="event-card__body">
-      <h3 class="event-card__title">{{ event.title }}</h3>
+      <h3 class="event-card__title">{{ localizedEvent.title }}</h3>
 
       <div class="event-card__meta">
         <span class="event-card__meta-item">
@@ -32,11 +32,11 @@
         </span>
         <span class="event-card__meta-item">
           <i class="bi bi-geo-alt"></i>
-          {{ event.location.name }}
+          {{ localizedEvent.location.name }}
         </span>
       </div>
 
-      <p class="event-card__desc">{{ event.shortDescription }}</p>
+      <p class="event-card__desc">{{ localizedEvent.shortDescription }}</p>
 
       <div v-if="happening" class="event-card__live-cta">
         <i class="bi bi-arrow-right-circle-fill"></i>
@@ -50,7 +50,7 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from '../../composables/useI18n.js'
-import { useEvents } from '../../composables/useEvents.js'
+import { useEvents, localizeEvent } from '../../composables/useEvents.js'
 
 const props = defineProps({
   event: { type: Object, required: true }
@@ -61,6 +61,7 @@ const { t, locale } = useI18n()
 const { isHappeningNow } = useEvents()
 
 const happening = computed(() => isHappeningNow(props.event))
+const localizedEvent = computed(() => localizeEvent(props.event, locale.value))
 
 const categoryLabel = computed(() => {
   const map = {

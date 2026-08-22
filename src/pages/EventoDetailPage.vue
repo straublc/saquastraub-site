@@ -8,7 +8,7 @@
       </RouterLink>
 
       <!-- Hero image -->
-      <img :src="event.coverImage" :alt="event.title" class="event-hero">
+      <img :src="event.coverImage" :alt="localizedEvent?.title" class="event-hero">
 
       <!-- Category badge + live -->
       <div class="event-detail__badges">
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Title -->
-      <h1 class="event-detail__title">{{ event.title }}</h1>
+      <h1 class="event-detail__title">{{ localizedEvent?.title }}</h1>
 
       <!-- Meta -->
       <div class="event-meta">
@@ -30,7 +30,7 @@
         </div>
         <div class="event-meta__item">
           <i class="bi bi-geo-alt event-meta__icon"></i>
-          <span>{{ event.location.name }}</span>
+          <span>{{ localizedEvent?.location.name }}</span>
         </div>
         <div class="event-meta__item" v-if="event.officialUrl">
           <i class="bi bi-link-45deg event-meta__icon"></i>
@@ -43,13 +43,13 @@
       <!-- Description -->
       <div class="event-detail__section">
         <h2 class="event-detail__section-title">{{ t('sobreEvento') }}</h2>
-        <div class="event-detail__description">{{ event.description }}</div>
+        <div class="event-detail__description">{{ localizedEvent?.description }}</div>
       </div>
 
       <!-- Gallery -->
       <div v-if="event.gallery?.length" class="event-detail__section">
         <h2 class="event-detail__section-title">{{ t('galeriaEvento') }}</h2>
-        <EventGallery :images="event.gallery" :title="event.title" />
+        <EventGallery :images="event.gallery" :title="localizedEvent?.title" />
       </div>
 
       <!-- CTA WhatsApp -->
@@ -79,7 +79,7 @@
 <script setup>
 import { computed, watchEffect } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
-import { useEvents } from '../composables/useEvents.js'
+import { useEvents, localizeEvent } from '../composables/useEvents.js'
 import EventGallery from '../components/events/EventGallery.vue'
 
 const props = defineProps({
@@ -91,12 +91,13 @@ const { getEventBySlug, isHappeningNow } = useEvents()
 
 const event    = computed(() => getEventBySlug(props.slug))
 const happening = computed(() => event.value ? isHappeningNow(event.value) : false)
+const localizedEvent = computed(() => event.value ? localizeEvent(event.value, locale.value) : null)
 
 watchEffect(() => {
-  if (event.value) {
-    document.title = `${event.value.title} — SaquaStraub`
-    setMeta('og:title',       `${event.value.title} — SaquaStraub`)
-    setMeta('og:description', event.value.shortDescription)
+  if (localizedEvent.value) {
+    document.title = `${localizedEvent.value.title} — SaquaStraub`
+    setMeta('og:title',       `${localizedEvent.value.title} — SaquaStraub`)
+    setMeta('og:description', localizedEvent.value.shortDescription)
     setMeta('og:image',       event.value.coverImage)
   }
 })
@@ -145,9 +146,12 @@ function fmtWhats(dateStr) {
 function reservarParaEvento() {
   if (!event.value) return
   const endStr = event.value.endDate
-    ? `a ${fmtWhats(event.value.endDate)}`
-    : 'em diante'
-  const msg = `Olá! Vi o evento "${event.value.title}", que acontece de ${fmtWhats(event.value.startDate)} ${endStr} em Saquarema, e gostaria de consultar a disponibilidade da casa nesse período.`
+    ? t('whatsEventoEnd').replace('{date}', fmtWhats(event.value.endDate))
+    : t('whatsEventoOpenEnd')
+  const msg = t('whatsEventoMsg')
+    .replace('{title}', localizedEvent.value?.title ?? event.value.title)
+    .replace('{start}', fmtWhats(event.value.startDate))
+    .replace('{end}', endStr)
   window.open(`https://wa.me/5521976011899?text=${encodeURIComponent(msg)}`, '_blank')
 }
 </script>

@@ -71,13 +71,19 @@ const MONTH_ABBR = {
   'pt-BR': ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
   'en-US': ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
   'es-ES': ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+  'fr-FR': ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'],
+  'it-IT': ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'],
   'de-DE': ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+}
+
+function localeCode() {
+  const map = { pt: 'pt-BR', es: 'es-ES', fr: 'fr-FR', it: 'it-IT', de: 'de-DE' }
+  return map[locale.value] || 'en-US'
 }
 
 function formatMonthChip(yearMonth) {
   const [year, month] = yearMonth.split('-').map(Number)
-  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : locale.value === 'de' ? 'de-DE' : 'en-US'
-  const abbrs = MONTH_ABBR[localeCode] || MONTH_ABBR['pt-BR']
+  const abbrs = MONTH_ABBR[localeCode()] || MONTH_ABBR['pt-BR']
   return `${abbrs[month - 1]} ${year}`
 }
 
