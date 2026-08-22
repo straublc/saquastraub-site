@@ -131,6 +131,7 @@ const langs = [
   { code: 'es', label: 'ES', name: 'Español',     flag: 'es.webp' },
   { code: 'fr', label: 'FR', name: 'Français',    flag: 'fr.svg'  },
   { code: 'it', label: 'IT', name: 'Italiano',    flag: 'it.svg'  },
+  { code: 'de', label: 'DE', name: 'Deutsch',     flag: 'de.svg'  },
 ]
 
 const currentFlag      = computed(() => langs.find(l => l.code === locale.value)?.flag  ?? 'br.webp')

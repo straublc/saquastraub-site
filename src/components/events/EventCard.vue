@@ -76,7 +76,7 @@ const categoryLabel = computed(() => {
 })
 
 const formattedDate = computed(() => {
-  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : 'en-US'
+  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : locale.value === 'de' ? 'de-DE' : locale.value === 'fr' ? 'fr-FR' : locale.value === 'it' ? 'it-IT' : 'en-US'
   const start = new Date(props.event.startDate + 'T00:00:00')
   const end   = new Date(props.event.endDate   + 'T00:00:00')
 

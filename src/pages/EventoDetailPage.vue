@@ -127,7 +127,7 @@ const categoryLabel = computed(() => {
 
 const formattedDate = computed(() => {
   if (!event.value) return ''
-  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : 'en-US'
+  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : locale.value === 'de' ? 'de-DE' : locale.value === 'fr' ? 'fr-FR' : locale.value === 'it' ? 'it-IT' : 'en-US'
   const start = new Date(event.value.startDate + 'T00:00:00')
   const end   = event.value.endDate ? new Date(event.value.endDate + 'T00:00:00') : null
   if (!end || event.value.startDate === event.value.endDate) {

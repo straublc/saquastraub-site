@@ -70,12 +70,13 @@ const activePill = computed(() => {
 const MONTH_ABBR = {
   'pt-BR': ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
   'en-US': ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-  'es-ES': ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+  'es-ES': ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+  'de-DE': ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
 }
 
 function formatMonthChip(yearMonth) {
   const [year, month] = yearMonth.split('-').map(Number)
-  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : 'en-US'
+  const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : locale.value === 'de' ? 'de-DE' : 'en-US'
   const abbrs = MONTH_ABBR[localeCode] || MONTH_ABBR['pt-BR']
   return `${abbrs[month - 1]} ${year}`
 }
