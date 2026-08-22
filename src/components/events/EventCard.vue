@@ -79,7 +79,13 @@ const categoryLabel = computed(() => {
 const formattedDate = computed(() => {
   const localeCode = locale.value === 'pt' ? 'pt-BR' : locale.value === 'es' ? 'es-ES' : locale.value === 'de' ? 'de-DE' : locale.value === 'fr' ? 'fr-FR' : locale.value === 'it' ? 'it-IT' : 'en-US'
   const start = new Date(props.event.startDate + 'T00:00:00')
-  const end   = new Date(props.event.endDate   + 'T00:00:00')
+
+  // endDate null = open-ended event, show only start date
+  if (!props.event.endDate) {
+    return start.toLocaleDateString(localeCode, { day: 'numeric', month: 'short', year: 'numeric' })
+  }
+
+  const end = new Date(props.event.endDate + 'T00:00:00')
 
   if (props.event.startDate === props.event.endDate) {
     return start.toLocaleDateString(localeCode, { day: 'numeric', month: 'short', year: 'numeric' })
