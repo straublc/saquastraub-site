@@ -462,7 +462,9 @@ button { cursor: pointer; font-family: inherit; }
 .navbar__mobile-lang-options button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: .45rem;
+  min-width: 4.5rem;
   padding: .5rem .85rem;
   border: 1.5px solid var(--gray-200);
   border-radius: var(--r-full);
